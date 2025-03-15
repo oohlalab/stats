@@ -1,52 +1,33 @@
 ---
-title: "OuhLaLab"
 ---
 
-This is a Quarto website.
+<style>
+   body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+   }
+   .container {
+      text-align: center;
+      background: white;
+      padding: 20px;
+      margin-bottom: 200px;
+   }
+   h1 {
+      margin: 0;
+      font-size: 6em;
+   }
+   h3 {
+      margin: 5px 0 0;
+      color: gray;
+   }
+</style>
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+<div class="container">
+   <h1>OohLa<b><i>Lab</i></b></h1>
+   <h3>Statistics, (finally) simply explained</h3>
+</div>
 
-## Hey there
-
-### part 1
-
-made by [jesus](https://barbierjoseph.com)
-
-![A Lovely Image](img.jpg)
-
-### part 2
-
-::: {.panel-tabset}
-## R
-
-``` {.r}
-fizz_buzz <- function(fbnums = 1:50) {
-  output <- dplyr::case_when(
-    fbnums %% 15 == 0 ~ "FizzBuzz",
-    fbnums %% 3 == 0 ~ "Fizz",
-    fbnums %% 5 == 0 ~ "Buzz",
-    TRUE ~ as.character(fbnums)
-  )
-  print(output)
-}
-```
-
-## Python
-
-``` {.python}
-def fizz_buzz(num):
-   if num % 15 == 0:
-      print("FizzBuzz")
-   elif num % 5 == 0:
-      print("Buzz")
-   elif num % 3 == 0:
-      print("Fizz")
-   else:
-      print(num)
-```
-
-:::
-
-## Hola
-
-### que tal
+Here goes the content where you find your

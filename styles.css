@@ -1,1 +1,7 @@
-/* css styles */
+.navbar {
+  background-color: black;
+}
+
+h1.title {
+  margin-top: 30px;
+}
