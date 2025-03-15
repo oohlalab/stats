@@ -3,15 +3,44 @@ project:
   output-dir: docs
 
 website:
-  title: "The Stats Project"
+  title: "OuhLaLab"
   navbar:
     left:
       - href: index.qmd
         text: Home
       - about.qmd
+  sidebar:
+    style: "floating"
+    search: true
+    contents:
+      - text: "Introduction"
+        href: introduction.qmd
+      - section: "Basics"
+        href: basics-summary.qmd
+        contents:
+          - index.qmd
+          - basics-knitr.qmd
+          - basics-jupyter.qmd
+      - section: "Layout"
+        contents:
+          - layout.qmd
+          - layout-knitr.qmd
+          - layout-jupyter.qmd
+      - section: advanced.qmd
+        contents:
+          - raw-code.qmd
+          - custom-theme.qmd
+      - acknowlegment.qmd
 
 format:
   html:
-    theme: cosmo
+    theme: journal
+    smooth-scroll: true
+    link-external-icon: true
+    link-external-newwindow: true
+    embed-resources: true
     css: styles.css
     toc: true
+    toc-title: Contents
+
+lightbox: true
