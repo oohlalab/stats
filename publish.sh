@@ -1,4 +1,4 @@
 quarto render
-git add docs
+git add -A
 git commit -m "Publish site to docs/"
 git push

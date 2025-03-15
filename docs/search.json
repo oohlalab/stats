@@ -11,35 +11,20 @@
     "href": "index.html",
     "title": "OuhLaLab",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.",
-    "crumbs": [
-      "Home",
-      "Basics",
-      "OuhLaLab"
-    ]
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
   },
   {
     "objectID": "index.html#hey-there",
     "href": "index.html#hey-there",
     "title": "OuhLaLab",
     "section": "Hey there",
-    "text": "Hey there\n\npart 1\nmade by jesus\n\n\n\nA Lovely Image\n\n\n\n\npart 2\n\nRPython\n\n\nfizz_buzz &lt;- function(fbnums = 1:50) {\n  output &lt;- dplyr::case_when(\n    fbnums %% 15 == 0 ~ \"FizzBuzz\",\n    fbnums %% 3 == 0 ~ \"Fizz\",\n    fbnums %% 5 == 0 ~ \"Buzz\",\n    TRUE ~ as.character(fbnums)\n  )\n  print(output)\n}\n\n\ndef fizz_buzz(num):\n   if num % 15 == 0:\n      print(\"FizzBuzz\")\n   elif num % 5 == 0:\n      print(\"Buzz\")\n   elif num % 3 == 0:\n      print(\"Fizz\")\n   else:\n      print(num)",
-    "crumbs": [
-      "Home",
-      "Basics",
-      "OuhLaLab"
-    ]
+    "text": "Hey there\n\npart 1\nmade by jesus\n\n\n\nA Lovely Image\n\n\n\n\npart 2\n\nRPython\n\n\nfizz_buzz &lt;- function(fbnums = 1:50) {\n  output &lt;- dplyr::case_when(\n    fbnums %% 15 == 0 ~ \"FizzBuzz\",\n    fbnums %% 3 == 0 ~ \"Fizz\",\n    fbnums %% 5 == 0 ~ \"Buzz\",\n    TRUE ~ as.character(fbnums)\n  )\n  print(output)\n}\n\n\ndef fizz_buzz(num):\n   if num % 15 == 0:\n      print(\"FizzBuzz\")\n   elif num % 5 == 0:\n      print(\"Buzz\")\n   elif num % 3 == 0:\n      print(\"Fizz\")\n   else:\n      print(num)"
   },
   {
     "objectID": "index.html#hola",
     "href": "index.html#hola",
     "title": "OuhLaLab",
     "section": "Hola",
-    "text": "Hola\n\nque tal",
-    "crumbs": [
-      "Home",
-      "Basics",
-      "OuhLaLab"
-    ]
+    "text": "Hola\n\nque tal"
   }
 ]
