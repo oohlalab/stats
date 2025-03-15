@@ -51,5 +51,5 @@ Enter <b>OohLaLab</b>. This is the website you’ve been dreaming of but didn’
 
 
 <center>
-   <a href="" style="font-size: 1.5em">Get Started</a>
+   <a href="./search.html" style="font-size: 1.5em">Get Started</a>
 </center>

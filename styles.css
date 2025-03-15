@@ -46,13 +46,12 @@ a:hover::after {
   }
 }
 
-/* Base button style */
 .press-button {
   padding: 12px 24px;
   font-size: 1em;
   font-weight: 500;
-  color: #fff; /* Text color */
-  background-color: #007bff; /* Button color */
+  color: #fff;
+  background-color: #007bff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -60,21 +59,18 @@ a:hover::after {
   position: relative;
   overflow: hidden;
   transition: transform 0.1s ease, box-shadow 0.1s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Pressing effect */
 .press-button:active {
-  transform: scale(0.95); /* Slightly shrink the button */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reduce shadow to simulate depth */
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Optional: Add a hover effect for extra interactivity */
 .press-button:hover {
-  background-color: #0056b3; /* Darker shade on hover */
+  background-color: #0056b3;
 }
 
-/* Optional: Add a smooth transition for the background color */
 .press-button {
   transition: background-color 0.2s ease, transform 0.1s ease,
     box-shadow 0.1s ease;

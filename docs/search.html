@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OohLaLab</title>
+<title>Search – OohLaLab</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -4795,11 +4795,11 @@ box-shadow 0.1s ease;
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./search.html"> 
+    <a class="nav-link active" href="./search.html" aria-current="page"> 
 <span class="menu-text">Search</span></a>
   </li>  
 </ul>
@@ -4817,57 +4817,485 @@ box-shadow 0.1s ease;
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Search</h1>
+</div>
 
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 <style>
-body {
-display: flex;
-justify-content: center;
-align-items: center;
-min-height: 100vh;
-margin: 0;
-text-align: justify;
-}
-.container {
-text-align: center;
-background: white;
+#decision-tree {
+font-family: Arial, sans-serif;
+max-width: 600px;
+margin: 0 auto;
 padding: 20px;
-margin-bottom: 100px;
-margin-top: 150px;
+border: 1px solid #ccc;
+border-radius: 8px;
+background-color: #f9f9f9;
 }
-h1 {
-margin: 0;
-font-size: 6em;
+#question {
+margin-bottom: 20px;
+font-size: 1.2em;
+color: #333;
 }
-h3 {
-margin: 5px 0 0;
-color: gray;
+.option-button {
+display: block;
+width: 100%;
+padding: 10px;
+margin: 5px 0;
+font-size: 1em;
+color: #fff;
+background-color: #007bff;
+border: none;
+border-radius: 4px;
+cursor: pointer;
 }
-@media (max-width: 768px) {
-.container {
-margin-top: 50px; 
+.option-button:hover {
+background-color: #0056b3;
 }
-h1 {
-font-size: 4em; 
+#back-button, #reset-button {
+margin-top: 10px;
+padding: 8px 16px;
+font-size: 0.9em;
+color: #fff;
+background-color: #6c757d;
+border: none;
+border-radius: 4px;
+cursor: pointer;
 }
+#back-button:hover, #reset-button:hover {
+background-color: #5a6268;
 }
 </style>
-<div class="container">
-<h1>
-OohLa<b><i>Lab</i></b>
-</h1>
-<h3 class="anchored">
-Statistics, (finally) simply explained
-</h3>
+<div id="decision-tree">
+<h2 id="question" class="anchored">
+</h2>
+<div id="options">
+
 </div>
-<p>Alright, let me paint you a picture. You’re sitting there, staring at your screen, trying to make sense of this statistical concept your professor mentioned or that your boss casually dropped in a meeting. You’ve got data, you’ve got questions, but you’re stuck on one thing: what test do I even use? Is it a t-test? A chi-square? ANOVA? Regression? Why does it feel like every time you Google it, you end up in a rabbit hole of jargon, equations, and Wikipedia pages that might as well be written in another language?</p>
-<p>You start reading, and at first, it seems manageable. But then, out of nowhere, you’re hit with terms like “homoscedasticity” or “p-values” and your brain just goes, “Nope, I’m out.” You’re overwhelmed, frustrated, and maybe even a little panicked because, let’s be real, deadlines don’t care about your statistical confusion.</p>
-<p>Sound familiar? <a href="zafaz">Yeah</a>, we’ve been there too. Statistics can feel like a maze, and sometimes it’s hard to even know where to start. But what if I told you there’s a place that cuts through all the noise? A place that doesn’t just throw math at you but actually explains things in a way that makes sense?</p>
-<p>Enter <b>OohLaLab</b>. This is the website you’ve been dreaming of but didn’t know existed. It’s all about making statistics approachable, clear, and—dare I say—even a little fun. No walls of text, no intimidating equations (unless you want them), just straightforward articles that get to the point. They break down those confusing concepts into bite-sized pieces, so you can actually understand what’s going on.</p>
-<center>
-<a href="./search.html" style="font-size: 1.5em">Get Started</a>
-</center>
+<p><button id="back-button" style="display: none;">Back</button> <button id="reset-button">Reset</button></p>
+</div>
+<script type="module">const decisionTree = {
+  question: "What is your primary goal?",
+  options: [
+    {
+      text: "Compare groups or conditions",
+      next: {
+        question: "How many groups are you comparing?",
+        options: [
+          {
+            text: "Two groups",
+            next: {
+              question: "Are the groups independent or paired/matched?",
+              options: [
+                {
+                  text: "Independent",
+                  next: {
+                    question: "What type of data do you have?",
+                    options: [
+                      {
+                        text: "Continuous (interval/ratio)",
+                        next: {
+                          question: "Are data normally distributed?",
+                          options: [
+                            {
+                              text: "Yes, and equal variances",
+                              result: "Independent t-test",
+                            },
+                            {
+                              text: "No/non-parametric",
+                              result: "Mann-Whitney U test",
+                            },
+                            {
+                              text: "Unequal variances",
+                              result: "Welch's t-test",
+                            },
+                          ],
+                        },
+                      },
+                      {
+                        text: "Categorical (nominal/ordinal)",
+                        next: {
+                          question: "What analysis type?",
+                          options: [
+                            {
+                              text: "Goodness of fit",
+                              result: "Chi-square goodness of fit",
+                            },
+                            {
+                              text: "Association between variables",
+                              next: {
+                                question: "Sample size?",
+                                options: [
+                                  {
+                                    text: "Large (expected counts ≥5)",
+                                    result: "Chi-square test",
+                                  },
+                                  {
+                                    text: "Small (expected counts <5)",
+                                    result: "Fisher's exact test",
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                      },
+                      {
+                        text: "Time-to-event/survival",
+                        result: "Log-rank test",
+                      },
+                    ],
+                  },
+                },
+                {
+                  text: "Paired/matched",
+                  next: {
+                    question: "Data type?",
+                    options: [
+                      {
+                        text: "Continuous",
+                        next: {
+                          question: "Normally distributed differences?",
+                          options: [
+                            { text: "Yes", result: "Paired t-test" },
+                            { text: "No", result: "Wilcoxon signed-rank test" },
+                          ],
+                        },
+                      },
+                      {
+                        text: "Categorical",
+                        result: "McNemar's test",
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+          {
+            text: "Three or more groups",
+            next: {
+              question: "Group relationships?",
+              options: [
+                {
+                  text: "Independent groups",
+                  next: {
+                    question: "Data type?",
+                    options: [
+                      {
+                        text: "Continuous",
+                        next: {
+                          question: "Normality assumption met?",
+                          options: [
+                            { text: "Yes", result: "ANOVA" },
+                            { text: "No", result: "Kruskal-Wallis test" },
+                          ],
+                        },
+                      },
+                      {
+                        text: "Categorical",
+                        result: "Chi-square test of independence",
+                      },
+                    ],
+                  },
+                },
+                {
+                  text: "Repeated measures/related groups",
+                  next: {
+                    question: "Data type?",
+                    options: [
+                      {
+                        text: "Continuous",
+                        next: {
+                          question: "Normally distributed?",
+                          options: [
+                            { text: "Yes", result: "Repeated measures ANOVA" },
+                            { text: "No", result: "Friedman test" },
+                          ],
+                        },
+                      },
+                      {
+                        text: "Categorical",
+                        result: "Cochran's Q test",
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+    {
+      text: "Predict outcomes or model relationships",
+      next: {
+        question: "Outcome variable type?",
+        options: [
+          {
+            text: "Continuous",
+            next: {
+              question: "Number of predictors?",
+              options: [
+                {
+                  text: "Single predictor",
+                  next: {
+                    question: "Relationship type?",
+                    options: [
+                      { text: "Linear", result: "Simple linear regression" },
+                      { text: "Non-linear", result: "Non-linear regression" },
+                    ],
+                  },
+                },
+                {
+                  text: "Multiple predictors",
+                  next: {
+                    question: "Model characteristics?",
+                    options: [
+                      {
+                        text: "Standard linear model",
+                        result: "Multiple linear regression",
+                      },
+                      {
+                        text: "Hierarchical/mixed effects",
+                        result: "Linear mixed-effects model",
+                      },
+                      {
+                        text: "Regularization needed",
+                        result: "Ridge/Lasso/Elastic Net regression",
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+          {
+            text: "Categorical (binary)",
+            result: "Logistic regression",
+          },
+          {
+            text: "Categorical (multinomial)",
+            result: "Multinomial logistic regression",
+          },
+          {
+            text: "Count data",
+            next: {
+              question: "Overdispersion present?",
+              options: [
+                { text: "No", result: "Poisson regression" },
+                { text: "Yes", result: "Negative binomial regression" },
+              ],
+            },
+          },
+          {
+            text: "Time-to-event/survival",
+            result: "Cox proportional hazards regression",
+          },
+          {
+            text: "Ordinal categories",
+            result: "Ordinal logistic regression",
+          },
+        ],
+      },
+    },
+    {
+      text: "Explore relationships between variables",
+      next: {
+        question: "Variables to analyze?",
+        options: [
+          {
+            text: "Two continuous variables",
+            next: {
+              question: "Relationship type?",
+              options: [
+                {
+                  text: "Linear",
+                  next: {
+                    question: "Normality assumption?",
+                    options: [
+                      { text: "Met", result: "Pearson correlation" },
+                      {
+                        text: "Not met",
+                        result: "Spearman's rank correlation",
+                      },
+                    ],
+                  },
+                },
+                {
+                  text: "Non-linear",
+                  result: "Kendall's tau or distance correlation",
+                },
+              ],
+            },
+          },
+          {
+            text: "Two categorical variables",
+            result: "Chi-square test of independence",
+          },
+          {
+            text: "Continuous and categorical",
+            next: {
+              question: "Goal?",
+              options: [
+                {
+                  text: "Group differences",
+                  result: "ANOVA/t-test equivalents",
+                },
+                { text: "Predict continuous", result: "ANCOVA" },
+              ],
+            },
+          },
+          {
+            text: "Multivariate relationships",
+            next: {
+              question: "Analysis type?",
+              options: [
+                { text: "Dimension reduction", result: "PCA/Factor analysis" },
+                { text: "Clustering", result: "Cluster analysis methods" },
+                {
+                  text: "Mediation analysis",
+                  result: "Structural equation modeling",
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+    {
+      text: "Analyze longitudinal/repeated measures",
+      next: {
+        question: "Data structure?",
+        options: [
+          {
+            text: "Fixed time points",
+            result: "Repeated measures ANOVA",
+          },
+          {
+            text: "Continuous time measurements",
+            next: {
+              question: "Goal?",
+              options: [
+                { text: "Group comparisons", result: "Mixed-effects models" },
+                { text: "Growth patterns", result: "Growth curve analysis" },
+              ],
+            },
+          },
+          {
+            text: "Correlated observations",
+            result: "GEE (Generalized Estimating Equations)",
+          },
+        ],
+      },
+    },
+    {
+      text: "Assess measurement properties",
+      next: {
+        question: "What to evaluate?",
+        options: [
+          {
+            text: "Reliability",
+            next: {
+              question: "Data type?",
+              options: [
+                { text: "Continuous", result: "Cronbach's alpha" },
+                {
+                  text: "Categorical",
+                  result: "Cohen's kappa/Krippendorff's alpha",
+                },
+              ],
+            },
+          },
+          {
+            text: "Validity",
+            next: {
+              question: "Validity type?",
+              options: [
+                { text: "Construct", result: "Factor analysis" },
+                { text: "Criterion", result: "ROC curve analysis" },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+};
+
+let history = []; // Track navigation history
+
+function renderNode(node) {
+  const questionElement = document.getElementById("question");
+  const optionsElement = document.getElementById("options");
+  const backButton = document.getElementById("back-button");
+  const resetButton = document.getElementById("reset-button");
+
+  // Clear previous content
+  questionElement.textContent = node.question;
+  optionsElement.innerHTML = "";
+
+  // Show/hide back button based on history
+  if (history.length > 0) {
+    backButton.style.display = "inline-block";
+  } else {
+    backButton.style.display = "none";
+  }
+
+  // Render options
+  node.options.forEach((option) => {
+    const button = document.createElement("button");
+    button.textContent = option.text;
+    button.classList.add("option-button"); // Add a class for styling
+
+    button.addEventListener("click", () => {
+      if (option.result) {
+        // If it's a result, display it
+        questionElement.innerHTML = `<strong>Recommended Analysis:</strong><br>${option.result}`;
+        optionsElement.innerHTML = "";
+        history.push(node); // Save the last node before result
+      } else {
+        // Otherwise, move to the next node
+        history.push(node); // Save current node to history
+        renderNode(option.next);
+      }
+    });
+
+    optionsElement.appendChild(button);
+  });
+
+  // Reset button functionality
+  resetButton.onclick = () => {
+    history = []; // Clear history
+    renderNode(decisionTree); // Restart from the beginning
+  };
+
+  // Back button functionality
+  backButton.onclick = () => {
+    if (history.length > 0) {
+      const previousNode = history.pop(); // Get the last node from history
+      renderNode(previousNode); // Render the previous node
+    }
+  };
+}
+
+// Initial render
+renderNode(decisionTree);
+</script>
 
 
 

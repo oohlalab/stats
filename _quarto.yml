@@ -10,7 +10,8 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: search.qmd
+        text: Search
 
 format:
   html:
