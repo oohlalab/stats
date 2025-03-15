@@ -12,11 +12,12 @@ To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 
 made by [jesus](https://barbierjoseph.com)
 
-![A Lovely Image](img.jpg)
+![A Lovely Image](img/img.jpg)
 
 ### part 2
 
 ::: {.panel-tabset}
+
 ## R
 
 ``` {.r}

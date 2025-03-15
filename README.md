@@ -28,3 +28,5 @@ uv run pre-commit install
 ```bash
 quarto preview
 ```
+
+This should open a new windows in your browser at `http://localhost:4000/`

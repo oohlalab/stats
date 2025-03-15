@@ -20,7 +20,7 @@ format:
     link-external-newwindow: true
     embed-resources: true
     css: styles.css
-    toc: true
+    toc: false
     toc-title: Contents
 
 lightbox: true

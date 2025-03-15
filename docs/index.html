@@ -4713,10 +4713,75 @@ background-color: black;
 h1.title {
 margin-top: 30px;
 }
+a {
+position: relative;
+text-decoration: none;
+color: #b57e3e;
+font-weight: 500;
+transition: color 0.3s ease;
+}
+a:hover {
+color: #7136ac;
+}
+a::after {
+content: "";
+position: absolute;
+left: 0;
+bottom: -2px;
+width: 100%;
+height: 2px;
+background-color: #7136ac;
+transform: scaleX(0);
+transform-origin: bottom right;
+transition: transform 0.3s ease;
+}
+a:hover::after {
+transform: scaleX(1);
+transform-origin: bottom left;
+}
+@keyframes bounce {
+0%,
+100% {
+transform: translateY(0);
+}
+50% {
+transform: translateY(-5px);
+}
+}
+
+.press-button {
+padding: 12px 24px;
+font-size: 1em;
+font-weight: 500;
+color: #fff; 
+background-color: #007bff; 
+border: none;
+border-radius: 8px;
+cursor: pointer;
+outline: none;
+position: relative;
+overflow: hidden;
+transition: transform 0.1s ease, box-shadow 0.1s ease;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.press-button:active {
+transform: scale(0.95); 
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.press-button:hover {
+background-color: #0056b3; 
+}
+
+.press-button {
+transition: background-color 0.2s ease, transform 0.1s ease,
+box-shadow 0.1s ease;
+}
 </style>
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -4752,9 +4817,7 @@ margin-top: 30px;
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -4766,14 +4829,16 @@ body {
 display: flex;
 justify-content: center;
 align-items: center;
-height: 100vh;
+min-height: 100vh;
 margin: 0;
+text-align: justify;
 }
 .container {
 text-align: center;
 background: white;
 padding: 20px;
-margin-bottom: 200px;
+margin-bottom: 100px;
+margin-top: 150px;
 }
 h1 {
 margin: 0;
@@ -4782,6 +4847,14 @@ font-size: 6em;
 h3 {
 margin: 5px 0 0;
 color: gray;
+}
+@media (max-width: 768px) {
+.container {
+margin-top: 50px; 
+}
+h1 {
+font-size: 4em; 
+}
 }
 </style>
 <div class="container">
@@ -4792,7 +4865,13 @@ OohLa<b><i>Lab</i></b>
 Statistics, (finally) simply explained
 </h3>
 </div>
-<p>Here goes the content where you find your</p>
+<p>Alright, let me paint you a picture. You’re sitting there, staring at your screen, trying to make sense of this statistical concept your professor mentioned or that your boss casually dropped in a meeting. You’ve got data, you’ve got questions, but you’re stuck on one thing: what test do I even use? Is it a t-test? A chi-square? ANOVA? Regression? Why does it feel like every time you Google it, you end up in a rabbit hole of jargon, equations, and Wikipedia pages that might as well be written in another language?</p>
+<p>You start reading, and at first, it seems manageable. But then, out of nowhere, you’re hit with terms like “homoscedasticity” or “p-values” and your brain just goes, “Nope, I’m out.” You’re overwhelmed, frustrated, and maybe even a little panicked because, let’s be real, deadlines don’t care about your statistical confusion.</p>
+<p>Sound familiar? <a href="zafaz">Yeah</a>, we’ve been there too. Statistics can feel like a maze, and sometimes it’s hard to even know where to start. But what if I told you there’s a place that cuts through all the noise? A place that doesn’t just throw math at you but actually explains things in a way that makes sense?</p>
+<p>Enter <b>OohLaLab</b>. This is the website you’ve been dreaming of but didn’t know existed. It’s all about making statistics approachable, clear, and—dare I say—even a little fun. No walls of text, no intimidating equations (unless you want them), just straightforward articles that get to the point. They break down those confusing concepts into bite-sized pieces, so you can actually understand what’s going on.</p>
+<center>
+<a href style="font-size: 1.5em">Get Started</a>
+</center>
 
 
 
