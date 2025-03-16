@@ -4,6 +4,11 @@
 
 h1.title {
   margin-top: 30px;
+  margin-bottom: 30px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4em;
 }
 
 a {
@@ -44,34 +49,4 @@ a:hover::after {
   50% {
     transform: translateY(-5px);
   }
-}
-
-.press-button {
-  padding: 12px 24px;
-  font-size: 1em;
-  font-weight: 500;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  outline: none;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.press-button:active {
-  transform: scale(0.95);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.press-button:hover {
-  background-color: #0056b3;
-}
-
-.press-button {
-  transition: background-color 0.2s ease, transform 0.1s ease,
-    box-shadow 0.1s ease;
 }

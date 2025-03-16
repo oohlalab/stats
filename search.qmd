@@ -1,5 +1,6 @@
 ---
-title: Search
+title: Statistical Search Engine
+back-to-top-navigation: false
 ---
 
 <style>

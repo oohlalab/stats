@@ -6,12 +6,37 @@ project:
 
 website:
   title: "OohLaLab"
+  page-navigation: true
+  back-to-top-navigation: true
   navbar:
     left:
       - href: index.qmd
         text: Home
       - href: search.qmd
         text: Search
+      - sidebar:learn
+
+  sidebar:
+    - id: learn
+      title: "Learn"
+      style: "docked"
+      collapse-level: 2
+      contents:
+        - href: learn/index.qmd
+          text: "Introduction"
+        - section: "Descriptive Statistics"
+          contents:
+            - href: learn/average.qmd
+              text: average
+            - href: learn/median.qmd
+              text: median
+        - text: "---"
+        - section: "Parametric Tests"
+          contents:
+            - href: learn/index.qmd
+              text: Get Started
+            - href: learn/ttest.qmd
+              text: T Test
 
 format:
   html:
@@ -20,7 +45,7 @@ format:
     link-external-icon: true
     link-external-newwindow: true
     embed-resources: true
-    css: styles.css
+    css: style/styles.css
     toc: false
     toc-title: Contents
 

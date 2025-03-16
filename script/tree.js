@@ -347,7 +347,7 @@ const decisionTree = {
   ],
 };
 
-let history = []; // Track navigation history
+let history = [];
 
 function renderNode(node) {
   const questionElement = document.getElementById("question");
@@ -355,32 +355,27 @@ function renderNode(node) {
   const backButton = document.getElementById("back-button");
   const resetButton = document.getElementById("reset-button");
 
-  // Clear previous content
   questionElement.textContent = node.question;
   optionsElement.innerHTML = "";
 
-  // Show/hide back button based on history
   if (history.length > 0) {
     backButton.style.display = "inline-block";
   } else {
     backButton.style.display = "none";
   }
 
-  // Render options
   node.options.forEach((option) => {
     const button = document.createElement("button");
     button.textContent = option.text;
-    button.classList.add("option-button"); // Add a class for styling
+    button.classList.add("option-button");
 
     button.addEventListener("click", () => {
       if (option.result) {
-        // If it's a result, display it
         questionElement.innerHTML = `<strong>Recommended Analysis:</strong><br>${option.result}`;
         optionsElement.innerHTML = "";
-        history.push(node); // Save the last node before result
+        history.push(node);
       } else {
-        // Otherwise, move to the next node
-        history.push(node); // Save current node to history
+        history.push(node);
         renderNode(option.next);
       }
     });
@@ -388,20 +383,17 @@ function renderNode(node) {
     optionsElement.appendChild(button);
   });
 
-  // Reset button functionality
   resetButton.onclick = () => {
-    history = []; // Clear history
-    renderNode(decisionTree); // Restart from the beginning
+    history = [];
+    renderNode(decisionTree);
   };
 
-  // Back button functionality
   backButton.onclick = () => {
     if (history.length > 0) {
-      const previousNode = history.pop(); // Get the last node from history
-      renderNode(previousNode); // Render the previous node
+      const previousNode = history.pop();
+      renderNode(previousNode);
     }
   };
 }
 
-// Initial render
 renderNode(decisionTree);
