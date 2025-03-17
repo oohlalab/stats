@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Everything you need to know to learn about average and median">
 
-<title>average – OohLaLab</title>
+<title>Average, median and mode – OohLaLab</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -1667,9 +1668,8 @@ async function fuseSearch(query, fuse, fuseOptions) {
   return results;
 }
 </script>
-<meta name="quarto:offset" content="../">
-<link href="../learn/median.html" rel="next">
-<link href="../learn/index.html" rel="prev">
+<meta name="quarto:offset" content="../../">
+<link href="../../learn/descriptive-statistics/standard-error-and-variance.html" rel="next">
 <script>const sectionChanged = new CustomEvent("quarto-sectionChanged", {
   detail: {},
   bubbles: true,
@@ -4714,13 +4714,27 @@ background-color: black;
 }
 h1.title {
 margin-top: 30px;
-margin-bottom: 30px !important;
+margin-bottom: 10px !important;
 display: flex;
 justify-content: center;
 align-items: center;
 font-size: 4em;
 }
-.clean-link {
+p {
+font-size: 1.2em;
+}
+div.description {
+color: #737373;
+font-size: 1em;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.sidebar-item .menu-text {
+font-size: 0.9em;
+}
+</style>
+<style type="text/css">.clean-link {
 position: relative;
 text-decoration: none;
 color: #b57e3e;
@@ -4765,7 +4779,7 @@ transform: translateY(-5px);
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">OohLaLab</span>
     </a>
   </div>
@@ -4776,11 +4790,11 @@ transform: translateY(-5px);
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../search.html"> 
+    <a class="nav-link" href="../../search.html"> 
 <span class="menu-text">Search</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -4789,28 +4803,18 @@ transform: translateY(-5px);
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-learn">    
         <li>
-    <a class="dropdown-item" href="../learn/index.html">
+    <a class="dropdown-item" href="../../learn/index.html">
  <span class="dropdown-text">Introduction</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li class="dropdown-header">Descriptive Statistics</li>
         <li>
-    <a class="dropdown-item" href="../learn/average.html">
- <span class="dropdown-text">average</span></a>
+    <a class="dropdown-item" href="../../learn/descriptive-statistics/average-median-and-mode.html">
+ <span class="dropdown-text">Average, median and mode</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../learn/median.html">
- <span class="dropdown-text">median</span></a>
-  </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li class="dropdown-header">Parametric Tests</li>
-        <li>
-    <a class="dropdown-item" href="../learn/index.html">
- <span class="dropdown-text">Get Started</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../learn/ttest.html">
- <span class="dropdown-text">T Test</span></a>
+    <a class="dropdown-item" href="../../learn/descriptive-statistics/standard-error-and-variance.html">
+ <span class="dropdown-text">Standard error and variance</span></a>
   </li>  
     </ul>
   </li>
@@ -4825,7 +4829,7 @@ transform: translateY(-5px);
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../learn/average.html">Descriptive Statistics</a></li><li class="breadcrumb-item"><a href="../learn/average.html">average</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../learn/descriptive-statistics/average-median-and-mode.html">Descriptive Statistics</a></li><li class="breadcrumb-item"><a href="../../learn/descriptive-statistics/average-median-and-mode.html">Average, median and mode</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -4839,10 +4843,11 @@ transform: translateY(-5px);
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../learn/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../learn/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -4854,42 +4859,19 @@ transform: translateY(-5px);
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../learn/average.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">average</span></a>
+  <a href="../../learn/descriptive-statistics/average-median-and-mode.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Average, median and mode</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../learn/median.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">median</span></a>
+  <a href="../../learn/descriptive-statistics/standard-error-and-variance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Standard error and variance</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Parametric Tests</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../learn/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Get Started</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../learn/ttest.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T Test</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -4899,7 +4881,28 @@ transform: translateY(-5px);
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../learn/descriptive-statistics/average-median-and-mode.html">Descriptive Statistics</a></li><li class="breadcrumb-item"><a href="../../learn/descriptive-statistics/average-median-and-mode.html">Average, median and mode</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Average, median and mode</h1>
+</div>
 
+<div>
+  <div class="description">
+    Everything you need to know to learn about average and median
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 
@@ -5335,13 +5338,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../learn/index.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
-      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../learn/median.html" class="pagination-link" aria-label="median">
-        <span class="nav-page-text">median</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../learn/descriptive-statistics/standard-error-and-variance.html" class="pagination-link" aria-label="Standard error and variance">
+        <span class="nav-page-text">Standard error and variance</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

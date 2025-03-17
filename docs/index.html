@@ -4712,23 +4712,37 @@ background-color: black;
 }
 h1.title {
 margin-top: 30px;
-margin-bottom: 30px !important;
+margin-bottom: 10px !important;
 display: flex;
 justify-content: center;
 align-items: center;
 font-size: 4em;
 }
-a {
+p {
+font-size: 1.2em;
+}
+div.description {
+color: #737373;
+font-size: 1em;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.sidebar-item .menu-text {
+font-size: 0.9em;
+}
+</style>
+<style type="text/css">.clean-link {
 position: relative;
 text-decoration: none;
 color: #b57e3e;
 font-weight: 500;
 transition: color 0.3s ease;
 }
-a:hover {
+.clean-link:hover {
 color: #7136ac;
 }
-a::after {
+.clean-link::after {
 content: "";
 position: absolute;
 left: 0;
@@ -4740,7 +4754,7 @@ transform: scaleX(0);
 transform-origin: bottom right;
 transition: transform 0.3s ease;
 }
-a:hover::after {
+.clean-link:hover::after {
 transform: scaleX(1);
 transform-origin: bottom left;
 }
@@ -4793,22 +4807,12 @@ transform: translateY(-5px);
         <li><hr class="dropdown-divider"></li>
         <li class="dropdown-header">Descriptive Statistics</li>
         <li>
-    <a class="dropdown-item" href="./learn/average.html">
- <span class="dropdown-text">average</span></a>
+    <a class="dropdown-item" href="./learn/descriptive-statistics/average-median-and-mode.html">
+ <span class="dropdown-text">Average, median and mode</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./learn/median.html">
- <span class="dropdown-text">median</span></a>
-  </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li class="dropdown-header">Parametric Tests</li>
-        <li>
-    <a class="dropdown-item" href="./learn/index.html">
- <span class="dropdown-text">Get Started</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./learn/ttest.html">
- <span class="dropdown-text">T Test</span></a>
+    <a class="dropdown-item" href="./learn/descriptive-statistics/standard-error-and-variance.html">
+ <span class="dropdown-text">Standard error and variance</span></a>
   </li>  
     </ul>
   </li>
@@ -4877,7 +4881,7 @@ Break down stats, one concept at a time.
 <p>Enter <b>OohLaLab</b>. This is the website you’ve been dreaming of but didn’t know existed. It’s all about making statistics approachable, clear, and—dare I say—even a little fun. No walls of text, no intimidating equations (unless you want them), just straightforward articles that get to the point. They break down those confusing concepts into bite-sized pieces, so you can actually understand what’s going on.</p>
 <p><br></p>
 <center>
-<a href="./search.html" style="font-size: 1.5em">Get Started</a>
+<a href="./search.html" style="font-size: 1.5em" class="clean-link">Get Started</a>
 </center>
 
 

@@ -1,17 +1,4 @@
-.navbar {
-  background-color: black;
-}
-
-h1.title {
-  margin-top: 30px;
-  margin-bottom: 30px !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 4em;
-}
-
-a {
+.clean-link {
   position: relative;
   text-decoration: none;
   color: #b57e3e;
@@ -19,11 +6,11 @@ a {
   transition: color 0.3s ease;
 }
 
-a:hover {
+.clean-link:hover {
   color: #7136ac;
 }
 
-a::after {
+.clean-link::after {
   content: "";
   position: absolute;
   left: 0;
@@ -36,7 +23,7 @@ a::after {
   transition: transform 0.3s ease;
 }
 
-a:hover::after {
+.clean-link:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }

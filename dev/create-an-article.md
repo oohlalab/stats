@@ -1,34 +1,3 @@
-## Set up environment
-
-- Clone repo locally:
-
-```bash
-git clone https://github.com/JosephBARBIERDARNAL/oohlalab.git
-cd oohlalab
-```
-
-- [Install Quarto](https://quarto.org/docs/get-started/)
-
-- [Install uv](https://docs.astral.sh/uv/)
-
-- Install dependencies and pre-commit hook:
-
-```bash
-uv python install
-uv sync
-uv run pre-commit install
-```
-
-- Try to preview website locally
-
-```bash
-quarto preview
-```
-
-This should open a new windows in your browser at `http://localhost:4000/`
-
-<br>
-
 ## Create a new article
 
 All articles must be described in the `_quarto.yml` file (global configuration of the website), and it will looks like this:
@@ -55,7 +24,7 @@ When you open an article, it will looks like this:
 ```md
 ---
 title: Standard error and variance
-description: Everything you need to know to learn about standard error and variance
+description: "Everything you need to know to learn about standard error and variance"
 date: today
 ---
 
@@ -78,4 +47,4 @@ There is the font header, separated by `---`, where we expect a title, a short d
 
 And then everything that happens after it's markdown content. For example, the above article will looks like this:
 
-![](dev/img/preview-article.png)
+![](img/preview-article.png)

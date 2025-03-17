@@ -1,4 +1,7 @@
 project:
+  render:
+    - "*.qmd"
+    - "!dev/"
   type: website
   output-dir: docs
   preview:
@@ -21,22 +24,18 @@ website:
       title: "Learn"
       style: "docked"
       collapse-level: 2
+      href: learn/index.qmd
       contents:
         - href: learn/index.qmd
           text: "Introduction"
+        - text: "---"
         - section: "Descriptive Statistics"
           contents:
-            - href: learn/average.qmd
-              text: average
-            - href: learn/median.qmd
-              text: median
+            - href: learn/descriptive-statistics/average-median-and-mode.qmd
+              text: Average, median and mode
+            - href: learn/descriptive-statistics/standard-error-and-variance.qmd
+              text: Standard error and variance
         - text: "---"
-        - section: "Parametric Tests"
-          contents:
-            - href: learn/index.qmd
-              text: Get Started
-            - href: learn/ttest.qmd
-              text: T Test
 
 format:
   html:
@@ -45,7 +44,7 @@ format:
     link-external-icon: true
     link-external-newwindow: true
     embed-resources: true
-    css: style/styles.css
+    css: [style/main.css, style/clean-link.css]
     toc: false
     toc-title: Contents
 

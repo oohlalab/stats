@@ -4712,23 +4712,34 @@ background-color: black;
 }
 h1.title {
 margin-top: 30px;
-margin-bottom: 30px !important;
+margin-bottom: 10px !important;
 display: flex;
 justify-content: center;
 align-items: center;
 font-size: 4em;
 }
-a {
+p {
+font-size: 1.2em;
+}
+div.description {
+color: #737373;
+font-size: 1em;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+</style>
+<style type="text/css">.clean-link {
 position: relative;
 text-decoration: none;
 color: #b57e3e;
 font-weight: 500;
 transition: color 0.3s ease;
 }
-a:hover {
+.clean-link:hover {
 color: #7136ac;
 }
-a::after {
+.clean-link::after {
 content: "";
 position: absolute;
 left: 0;
@@ -4740,7 +4751,7 @@ transform: scaleX(0);
 transform-origin: bottom right;
 transition: transform 0.3s ease;
 }
-a:hover::after {
+.clean-link:hover::after {
 transform: scaleX(1);
 transform-origin: bottom left;
 }
@@ -4793,12 +4804,12 @@ transform: translateY(-5px);
         <li><hr class="dropdown-divider"></li>
         <li class="dropdown-header">Descriptive Statistics</li>
         <li>
-    <a class="dropdown-item" href="./learn/average.html">
- <span class="dropdown-text">average</span></a>
+    <a class="dropdown-item" href="./learn/descriptive-statistics/average-and-median.html">
+ <span class="dropdown-text">Average and median</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./learn/median.html">
- <span class="dropdown-text">median</span></a>
+    <a class="dropdown-item" href="./learn/descriptive-statistics/standard-error-and-variance.html">
+ <span class="dropdown-text">Standard error and variance</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li class="dropdown-header">Parametric Tests</li>
