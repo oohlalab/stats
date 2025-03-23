@@ -35,6 +35,8 @@ website:
               text: Average, median and mode
             - href: learn/descriptive-statistics/standard-error-and-variance.qmd
               text: Standard error and variance
+            - href: learn/descriptive-statistics/my-first-article.qmd
+              text: My First Article
         - text: "---"
 
 format:
