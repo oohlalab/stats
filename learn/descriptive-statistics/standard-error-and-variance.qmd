@@ -6,6 +6,8 @@ date: today
 
 # headin 1
 
+THOMAS EST UNE BITE
+Et JOJO aussi 
 ## heading 2
 
 Hey there, this is where we write the content.
