@@ -14,11 +14,30 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
+      - name: Get Python version
+        id: python-version
+        run: |
+          PYTHON_VERSION=$(cat .python-version)
+          echo "python_version=${PYTHON_VERSION}" >> $GITHUB_OUTPUT
 
-      - name: Install dependencies
-        run: quarto install tinytex
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ steps.python-version.outputs.python_version }}
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - name: Install R dependencies
+        run: |
+          Rscript -e 'install.packages(c("rmarkdown", "knitr"))'
+
+      - name: Install Quarto dependencies
+        run: |
+          quarto install tinytex
+          quarto check
 
       - name: Render site
         run: quarto render
