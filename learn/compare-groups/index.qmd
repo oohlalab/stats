@@ -1,8 +1,0 @@
----
-title: Compare groups
----
-
-<br>
-<br>
-
-# This section is a work in progress, come back later!

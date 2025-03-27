@@ -1,7 +1,0 @@
-/.quarto/
-*cache*
-.DS_Store
-.vscode/
-*.sh
-.venv/
-_site/
