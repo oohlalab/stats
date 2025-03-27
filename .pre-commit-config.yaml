@@ -7,3 +7,11 @@ repos:
         args: [--fix]
       - id: ruff-format
         types_or: [python, pyi]
+  - repo: local
+    hooks:
+      - id: quarto-check
+        name: quarto check
+        entry: quarto check
+        language: system
+        types: [markdown]
+        pass_filenames: false
