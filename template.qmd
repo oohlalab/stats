@@ -65,5 +65,27 @@ library(ggplot2)
 
 :::
 
+<br><br>
+
+:::{.callout-note}
+This is an example of a note callout
+:::
+
+:::{.callout-tip}
+This is an example of a tip callout
+:::
+
+:::{.callout-caution}
+This is an example of a caution callout
+:::
+
+:::{.callout-warning}
+This is an example of a warning callout
+:::
+
+:::{.callout-important}
+This is an example of a important callout
+:::
+
 
 <br><br><br><br>
