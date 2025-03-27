@@ -3,7 +3,7 @@ project:
     - "*.qmd"
     - "!dev/"
   type: website
-  output-dir: docs
+  output-dir: _site
   preview:
     port: 4000
 
