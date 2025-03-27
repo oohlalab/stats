@@ -32,10 +32,38 @@ This is python code
 0.1 + 0.2
 ```
 
-<br><br>
-
 This is R code
 
 ```{r}
 0.1 + 0.2
 ```
+
+<br><br>
+
+
+Tabset
+
+::: {.panel-tabset}
+
+## Python
+
+```{python}
+import matplotlib
+
+print(matplotlib.__version__)
+```
+
+## R
+
+```{r}
+library(ggplot2)
+```
+
+## Thomas
+
+![](img/img.jpg)
+
+:::
+
+
+<br><br><br><br>
