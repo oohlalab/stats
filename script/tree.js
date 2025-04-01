@@ -152,78 +152,6 @@ const decisionTree = {
       },
     },
     {
-      text: "Predict outcomes or model relationships",
-      next: {
-        question: "Outcome variable type?",
-        options: [
-          {
-            text: "Continuous",
-            next: {
-              question: "Number of predictors?",
-              options: [
-                {
-                  text: "Single predictor",
-                  next: {
-                    question: "Relationship type?",
-                    options: [
-                      { text: "Linear", result: "Simple linear regression" },
-                      { text: "Non-linear", result: "Non-linear regression" },
-                    ],
-                  },
-                },
-                {
-                  text: "Multiple predictors",
-                  next: {
-                    question: "Model characteristics?",
-                    options: [
-                      {
-                        text: "Standard linear model",
-                        result: "Multiple linear regression",
-                      },
-                      {
-                        text: "Hierarchical/mixed effects",
-                        result: "Linear mixed-effects model",
-                      },
-                      {
-                        text: "Regularization needed",
-                        result: "Ridge/Lasso/Elastic Net regression",
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-          {
-            text: "Categorical (binary)",
-            result: "Logistic regression",
-          },
-          {
-            text: "Categorical (multinomial)",
-            result: "Multinomial logistic regression",
-          },
-          {
-            text: "Count data",
-            next: {
-              question: "Overdispersion present?",
-              options: [
-                { text: "No", result: "Poisson regression" },
-                { text: "Yes", result: "Negative binomial regression" },
-              ],
-            },
-          },
-          {
-            text: "Time-to-event/survival",
-            result: "Cox proportional hazards regression",
-          },
-          {
-            text: "Ordinal categories",
-            result: "Ordinal logistic regression",
-          },
-        ],
-      },
-    },
-    {
       text: "Explore relationships between variables",
       next: {
         question: "Variables to analyze?",
@@ -287,67 +215,26 @@ const decisionTree = {
         ],
       },
     },
-    {
-      text: "Analyze longitudinal/repeated measures",
-      next: {
-        question: "Data structure?",
-        options: [
-          {
-            text: "Fixed time points",
-            result: "Repeated measures ANOVA",
-          },
-          {
-            text: "Continuous time measurements",
-            next: {
-              question: "Goal?",
-              options: [
-                { text: "Group comparisons", result: "Mixed-effects models" },
-                { text: "Growth patterns", result: "Growth curve analysis" },
-              ],
-            },
-          },
-          {
-            text: "Correlated observations",
-            result: "GEE (Generalized Estimating Equations)",
-          },
-        ],
-      },
-    },
-    {
-      text: "Assess measurement properties",
-      next: {
-        question: "What to evaluate?",
-        options: [
-          {
-            text: "Reliability",
-            next: {
-              question: "Data type?",
-              options: [
-                { text: "Continuous", result: "Cronbach's alpha" },
-                {
-                  text: "Categorical",
-                  result: "Cohen's kappa/Krippendorff's alpha",
-                },
-              ],
-            },
-          },
-          {
-            text: "Validity",
-            next: {
-              question: "Validity type?",
-              options: [
-                { text: "Construct", result: "Factor analysis" },
-                { text: "Criterion", result: "ROC curve analysis" },
-              ],
-            },
-          },
-        ],
-      },
-    },
   ],
 };
 
 let history = [];
+
+function transitionTo(callback) {
+  const questionElement = document.getElementById("question");
+  const optionsElement = document.getElementById("options");
+
+  // Fade out current content
+  questionElement.style.opacity = "0";
+  optionsElement.style.opacity = "0";
+
+  setTimeout(() => {
+    callback(); // Update content
+    // Fade in new content
+    questionElement.style.opacity = "1";
+    optionsElement.style.opacity = "1";
+  }, 300);
+}
 
 function renderNode(node) {
   const questionElement = document.getElementById("question");
@@ -356,44 +243,47 @@ function renderNode(node) {
   const resetButton = document.getElementById("reset-button");
 
   questionElement.textContent = node.question;
-  optionsElement.innerHTML = "";
+  optionsElement.innerHTML = ""; // Clear previous options
 
-  if (history.length > 0) {
-    backButton.style.display = "inline-block";
-  } else {
-    backButton.style.display = "none";
-  }
+  backButton.style.display = history.length > 0 ? "inline-block" : "none";
 
   node.options.forEach((option) => {
     const button = document.createElement("button");
     button.textContent = option.text;
-    button.classList.add("option-button");
+    button.className = "option-button";
 
     button.addEventListener("click", () => {
-      if (option.result) {
-        questionElement.innerHTML = `<strong>Recommended Analysis:</strong><br>${option.result}`;
-        optionsElement.innerHTML = "";
-        history.push(node);
-      } else {
-        history.push(node);
-        renderNode(option.next);
-      }
+      transitionTo(() => {
+        if (option.result) {
+          questionElement.innerHTML = `<div class="result-box"><strong>Recommended Analysis:</strong><br>${option.result}</div>`;
+          optionsElement.innerHTML = "";
+          history.push(node);
+        } else {
+          history.push(node);
+          renderNode(option.next);
+        }
+      });
     });
 
     optionsElement.appendChild(button);
   });
 
   resetButton.onclick = () => {
-    history = [];
-    renderNode(decisionTree);
+    transitionTo(() => {
+      history = [];
+      renderNode(decisionTree);
+    });
   };
 
   backButton.onclick = () => {
     if (history.length > 0) {
-      const previousNode = history.pop();
-      renderNode(previousNode);
+      transitionTo(() => {
+        const previousNode = history.pop();
+        renderNode(previousNode);
+      });
     }
   };
 }
 
+// Initial render
 renderNode(decisionTree);

@@ -14,7 +14,7 @@ format:
     link-external-icon: true
     link-external-newwindow: true
     embed-resources: true
-    css: [style/main.css, style/clean-link.css]
+    css: [style/main.css, style/clean-link.css, style/search.css]
     toc: false
     toc-title: Contents
 
@@ -27,8 +27,6 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: search.qmd
-        text: Search
       - sidebar:learn
   sidebar:
     - id: learn
@@ -81,8 +79,3 @@ website:
           contents:
             - href: learn/survival-analysis/index.qmd
               text: Get started
-  page-footer:
-    foreground: white
-    background: black
-    left:
-      - text: "&copy; 2025 OohLaLab - All rights reserved"

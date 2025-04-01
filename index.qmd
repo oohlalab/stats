@@ -1,57 +1,16 @@
 ---
+title: Statistical Search Engine
 back-to-top-navigation: false
 ---
 
-<style>
-   body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      text-align: justify;
-   }
-   .container {
-      text-align: center;
-      background: white;
-      padding: 20px;
-      margin-bottom: 100px;
-      margin-top: 150px;
-   }
-   h1 {
-      margin: 0;
-      font-size: 6em;
-   }
-   h3 {
-      margin: 5px 0 0;
-      color: gray;
-   }
 
-   @media (max-width: 768px) {
-      .container {
-         margin-top: 50px; /* Smaller margin for mobile */
-      }
-      h1 {
-         font-size: 4em; /* Smaller font size for mobile */
-      }
-   }
-</style>
-
-<div class="container">
-   <h1>OohLa<b><i>Lab</i></b></h1>
-   <h3>Break down stats, one concept at a time.</h3>
+<div id="decision-tree">
+  <h2 id="question"></h2>
+  <div id="options"></div>
+  <button id="back-button" style="display: none;">Back</button>
+  <button id="reset-button">Reset</button>
 </div>
 
-Alright, let me paint you a picture. You’re sitting there, staring at your screen, trying to make sense of this statistical concept your professor mentioned or that your boss casually dropped in a meeting. You’ve got data, you’ve got questions, but you’re stuck on one thing: what test do I even use? Is it a t-test? A chi-square? ANOVA? Regression? Why does it feel like every time you Google it, you end up in a rabbit hole of jargon, equations, and Wikipedia pages that might as well be written in another language?
 
-You start reading, and at first, it seems manageable. But then, out of nowhere, you’re hit with terms like "homoscedasticity" or "p-values" and your brain just goes, "Nope, I’m out." You’re overwhelmed, frustrated, and maybe even a little panicked because, let’s be real, deadlines don’t care about your statistical confusion.
 
-Sound familiar? [Yeah](zafaz), we’ve been there too. Statistics can feel like a maze, and sometimes it’s hard to even know where to start. But what if I told you there’s a place that cuts through all the noise? A place that doesn’t just throw math at you but actually explains things in a way that makes sense?
-
-Enter <b>OohLaLab</b>. This is the website you’ve been dreaming of but didn’t know existed. It’s all about making statistics approachable, clear, and—dare I say—even a little fun. No walls of text, no intimidating equations (unless you want them), just straightforward articles that get to the point. They break down those confusing concepts into bite-sized pieces, so you can actually understand what’s going on.
-
-<br>
-
-<center>
-   <a href="./search.html" style="font-size: 1.5em" class="clean-link">Get Started</a>
-</center>
+<script type="module" src="./script/tree.js"></script>

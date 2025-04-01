@@ -1,0 +1,80 @@
+@import url("variables.css");
+
+#decision-tree {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 2rem auto;
+}
+
+#question {
+  margin-bottom: 25px;
+  font-size: 1.8em;
+  font-weight: 600;
+  color: #2c3e50;
+  padding: 15px;
+  border-left: 4px solid var(--primary-color);
+  background-color: rgb(241, 241, 241);
+  border-radius: 4px;
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+#options {
+  transition: opacity 0.3s ease;
+  font-size: 1.4em;
+  margin-top: 40px;
+  opacity: 1;
+}
+
+.option-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  font-size: 1em;
+  color: white;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  transform: translateY(0);
+}
+
+.option-button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.option-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+#back-button,
+#reset-button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 0.95em;
+  color: white;
+  background-color: var(--secondary-color);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#back-button:hover,
+#reset-button:hover {
+  background-color: var(--secondary-color-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.result-box {
+  padding: 15px;
+  background-color: #e8f4ff;
+  border-radius: 8px;
+  border: 1px solid var(--primary-color);
+  color: #2c3e50;
+  font-size: 1.1em;
+}
