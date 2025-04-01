@@ -5,3 +5,4 @@
 *.sh
 .venv/
 _site/
+sandbox*

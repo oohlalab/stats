@@ -17,6 +17,7 @@ format:
     css: [style/main.css, style/clean-link.css, style/search.css]
     toc: false
     toc-title: Contents
+    html-math-method: katex
 
 lightbox: true
 

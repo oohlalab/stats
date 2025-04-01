@@ -4,7 +4,7 @@ description: A concise yet insighful description of the article
 date: today
 ---
 
-# heading 1
+## heading 1
 
 today we'll talk about blablabla
 
@@ -19,6 +19,8 @@ Hey there, this is where we write the content.
 *this is italic*
 
 `this is in code`
+
+If you click [here](https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ_rI5w4byA1_4Ya2ZXKPMiDRGyt33rPvJ4coFuRR61pQ_6ylodmKv1bpUSQaxiGbKHCSu-Z-mhhOB3xul2ZTlQGQ), you'll be redirected to another website.
 
 <br><br>
 
@@ -43,7 +45,8 @@ This is R code
 
 Tabset
 
-::: {.panel-tabset}
+
+::: {.panel-tabset group="language"}
 
 ## Python
 
@@ -64,6 +67,7 @@ library(ggplot2)
 ![](img/img.jpg)
 
 :::
+
 
 <br><br>
 
@@ -87,5 +91,27 @@ This is an example of a warning callout
 This is an example of a important callout
 :::
 
+<br><br>
+
+### Interactive charts
+
+```{r}
+library(leaflet)
+leaflet() |>
+  addTiles() |>
+  addMarkers(lng=-0.570199, lat=44.827754, popup="SHREEEEED")
+```
+
+<br><br>
+
+## Des maths
+
+- Régression linéaire simple
+
+$$y_i = \beta_0 + \beta_1 \times x_i$$
+
+- Régression linéaire multiple
+
+$$y_i = \beta_0 + \beta_1 \times x_i^1 + \dots + \beta_n \times x_i^2$$
 
 <br><br><br><br>
