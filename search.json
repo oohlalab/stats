@@ -21,63 +21,35 @@
     "text": "this is bold\nthis is italic\nthis is in code\n\nExtra space here\n\nThis is python code\n\n0.1 + 0.2\n\n0.30000000000000004\n\n\nThis is R code\n\n0.1 + 0.2\n\n[1] 0.3\n\n\n\nTabset\n\nPythonRThomas\n\n\n\nimport matplotlib\n\nprint(matplotlib.__version__)\n\n3.10.1\n\n\n\n\n\nlibrary(ggplot2)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThis is an example of a note callout\n\n\n\n\n\n\n\n\nTip\n\n\n\nThis is an example of a tip callout\n\n\n\n\n\n\n\n\nCaution\n\n\n\nThis is an example of a caution callout\n\n\n\n\n\n\n\n\nWarning\n\n\n\nThis is an example of a warning callout\n\n\n\n\n\n\n\n\nImportant\n\n\n\nThis is an example of a important callout"
   },
   {
-    "objectID": "learn/time-series/index.html",
-    "href": "learn/time-series/index.html",
+    "objectID": "learn/survival-analysis/index.html",
+    "href": "learn/survival-analysis/index.html",
     "title": "Compare groups",
     "section": "",
     "text": "This section is a work in progress, come back later!",
     "crumbs": [
-      "Time series",
+      "Survival analysis",
       "Get started"
     ]
   },
   {
-    "objectID": "learn/preparing-and-exploring-data/index.html",
-    "href": "learn/preparing-and-exploring-data/index.html",
+    "objectID": "learn/predict-a-variable/index.html",
+    "href": "learn/predict-a-variable/index.html",
     "title": "Compare groups",
     "section": "",
     "text": "This section is a work in progress, come back later!",
     "crumbs": [
-      "Preparing and exploring data",
+      "Predict a variable",
       "Get started"
     ]
   },
   {
-    "objectID": "learn/index.html",
-    "href": "learn/index.html",
-    "title": "Introduction",
-    "section": "",
-    "text": "introduction to the descriptive statistics module. introduction to the descriptive statistics module. introduction to the descriptive statistics module. introduction to the descriptive statistics module. introduction to the descriptive statistics module. introduction to the descriptive statistics module. introduction to the descriptive statistics module. introduction to the descriptive statistics module. introduction to the descriptive statistics module. introduction to the descriptive statistics module.",
-    "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "learn/group-observations-or-variables/index.html",
-    "href": "learn/group-observations-or-variables/index.html",
+    "objectID": "learn/identify-relationships-between-variables/index.html",
+    "href": "learn/identify-relationships-between-variables/index.html",
     "title": "Compare groups",
     "section": "",
     "text": "This section is a work in progress, come back later!",
     "crumbs": [
-      "Group observations or variables",
-      "Get started"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "\nOohLaLab\n",
-    "section": "",
-    "text": "Break down stats, one concept at a time.\n\n\nAlright, let me paint you a picture. You’re sitting there, staring at your screen, trying to make sense of this statistical concept your professor mentioned or that your boss casually dropped in a meeting. You’ve got data, you’ve got questions, but you’re stuck on one thing: what test do I even use? Is it a t-test? A chi-square? ANOVA? Regression? Why does it feel like every time you Google it, you end up in a rabbit hole of jargon, equations, and Wikipedia pages that might as well be written in another language?\nYou start reading, and at first, it seems manageable. But then, out of nowhere, you’re hit with terms like “homoscedasticity” or “p-values” and your brain just goes, “Nope, I’m out.” You’re overwhelmed, frustrated, and maybe even a little panicked because, let’s be real, deadlines don’t care about your statistical confusion.\nSound familiar? Yeah, we’ve been there too. Statistics can feel like a maze, and sometimes it’s hard to even know where to start. But what if I told you there’s a place that cuts through all the noise? A place that doesn’t just throw math at you but actually explains things in a way that makes sense?\nEnter OohLaLab. This is the website you’ve been dreaming of but didn’t know existed. It’s all about making statistics approachable, clear, and—dare I say—even a little fun. No walls of text, no intimidating equations (unless you want them), just straightforward articles that get to the point. They break down those confusing concepts into bite-sized pieces, so you can actually understand what’s going on.\n\n\nGet Started"
-  },
-  {
-    "objectID": "learn/compare-groups/index.html",
-    "href": "learn/compare-groups/index.html",
-    "title": "Compare groups",
-    "section": "",
-    "text": "This section is a work in progress, come back later!",
-    "crumbs": [
-      "Compare groups",
+      "Identify relationships between variables",
       "Get started"
     ]
   },
@@ -115,43 +87,64 @@
     ]
   },
   {
-    "objectID": "learn/identify-relationships-between-variables/index.html",
-    "href": "learn/identify-relationships-between-variables/index.html",
+    "objectID": "learn/compare-groups/index.html",
+    "href": "learn/compare-groups/index.html",
     "title": "Compare groups",
     "section": "",
     "text": "This section is a work in progress, come back later!",
     "crumbs": [
-      "Identify relationships between variables",
+      "Compare groups",
       "Get started"
     ]
   },
   {
-    "objectID": "learn/predict-a-variable/index.html",
-    "href": "learn/predict-a-variable/index.html",
-    "title": "Compare groups",
-    "section": "",
-    "text": "This section is a work in progress, come back later!",
-    "crumbs": [
-      "Predict a variable",
-      "Get started"
-    ]
-  },
-  {
-    "objectID": "learn/survival-analysis/index.html",
-    "href": "learn/survival-analysis/index.html",
-    "title": "Compare groups",
-    "section": "",
-    "text": "This section is a work in progress, come back later!",
-    "crumbs": [
-      "Survival analysis",
-      "Get started"
-    ]
-  },
-  {
-    "objectID": "search.html",
-    "href": "search.html",
+    "objectID": "index.html",
+    "href": "index.html",
     "title": "Statistical Search Engine",
     "section": "",
     "text": "Back Reset"
+  },
+  {
+    "objectID": "learn/group-observations-or-variables/index.html",
+    "href": "learn/group-observations-or-variables/index.html",
+    "title": "Compare groups",
+    "section": "",
+    "text": "This section is a work in progress, come back later!",
+    "crumbs": [
+      "Group observations or variables",
+      "Get started"
+    ]
+  },
+  {
+    "objectID": "learn/index.html",
+    "href": "learn/index.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "introduction to the descriptive statistics module. introduction to the descriptive statistics module. introduction to the descriptive statistics module. introduction to the descriptive statistics module. introduction to the descriptive statistics module. introduction to the descriptive statistics module. introduction to the descriptive statistics module. introduction to the descriptive statistics module. introduction to the descriptive statistics module. introduction to the descriptive statistics module.",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "learn/preparing-and-exploring-data/index.html",
+    "href": "learn/preparing-and-exploring-data/index.html",
+    "title": "Compare groups",
+    "section": "",
+    "text": "This section is a work in progress, come back later!",
+    "crumbs": [
+      "Preparing and exploring data",
+      "Get started"
+    ]
+  },
+  {
+    "objectID": "learn/time-series/index.html",
+    "href": "learn/time-series/index.html",
+    "title": "Compare groups",
+    "section": "",
+    "text": "This section is a work in progress, come back later!",
+    "crumbs": [
+      "Time series",
+      "Get started"
+    ]
   }
 ]
