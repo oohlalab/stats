@@ -1,19 +1,154 @@
 ---
 title: Standard error and variance
 description: Everything you need to know to learn about standard error and variance
-date: today
 ---
 
-# headin 1
+```{python}
+#| echo: false
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-## heading 2
+def clean_ax(ax):
+   ax.set_xlim(2, 18)
+   ax.set_ylim(0, 0.45)
+   ax.spines[["left", "top", "right"]].set_visible(False)
+   ax.set_yticks([])
+   ax.set_xlabel("Height (in cm)")
 
-Hey there, this is where we write the content.
+np.random.seed(1)
 
-## headin 2
+red = "#b20e0e"
+blue = "#133ecd"
+text_params = dict(x=0, y=0.6, alpha=0.7, size=15, weight="bold")
 
-**this is bold**
+sample_size = 200
+height_lowvar = np.random.normal(loc=10, scale=1, size=sample_size)
+height_highvar = np.random.normal(loc=10, scale=3, size=sample_size)
+```
 
-*this is italic*
+<br>
 
-`this is in code`
+![](../../img/variance-meme.jpg){width=50% fig-align="center"}
+
+## Measuring dispersion
+
+Imagine you want to measure the __height of plants in your garden__ because you've seen that they all have __very different heights__, but you don't know how different they are.
+
+You want to compare with your friend's plants, which keeps saying that all of those plants are almost the same height.
+
+In order to do that, we want compare their distribution.
+
+::: {.panel-tabset}
+
+### High variance
+
+```{python}
+#| echo: false
+fig, ax = plt.subplots()
+clean_ax(ax)
+sns.kdeplot(height_highvar, fill=True, color=red, ax=ax)
+ax.text(s="Your plants", color=red, transform=ax.transAxes, **text_params)
+plt.show()
+```
+
+### Low variance
+
+```{python}
+#| echo: false
+fig, ax = plt.subplots()
+clean_ax(ax)
+sns.kdeplot(height_lowvar, fill=True, color=blue, ax=ax)
+ax.text(s="Your friend's plants", color=blue, transform=ax.transAxes, **text_params)
+plt.show()
+```
+
+### Combined
+
+```{python}
+#| echo: false
+fig, ax = plt.subplots()
+clean_ax(ax)
+sns.kdeplot(height_highvar, fill=True, color=red, ax=ax)
+sns.kdeplot(height_lowvar, fill=True, color=blue, ax=ax)
+plt.show()
+```
+
+:::
+
+
+Those graphs show us that <span style="color: #b20e0e; font-weight: bold;">your plants</span> height can vary between ~2cm to ~18cm, while <span style="color: #133ecd; font-weight: bold;">your friend's plant</span> are mostly between ~8cm to ~12cm.
+
+The variance and the standard error is just a way to __quantify__ this with an actual value.
+
+## How to calculate
+
+Let's assume you have the following measurements for your plants height in cm:
+
+`[10, 15, 4, 22, 25]`
+
+First we need to compute the average:
+
+$$ average = \frac{10 + 15 + 4 + 22 + 25}{5} =  15.2$$
+
+Now that we have the average, we want to compute the __difference between each plant and the average__.
+
+So for example the first plant has an height of `10`, so it gives us: `10 - 15.2 = -5.2`
+
+We do the same with others, and we now have a new list of values: `[-5.2, -0.2, -11.2, 6.8, 9.8]`
+
+As you can see, we have both __some negative and positive values__ here. In order to "fix" it, we take each value and **square it**. For example, we have `-5.2*-5.2 = 27.04`, and so on. Our new list looks like this now:
+
+`[27.04, 0.04, 125.44, 46.24, 96.04]`
+
+The final step to get the variance is to sum up all those values and divide by the number of values (it's basically like calculating an average):
+
+$$ variance = \frac{27.04 + 0.04 + 125.44 + 46.24 + 96.04}{5} =  58.96 $$
+
+And the standard error is just the **square root of the variance**:
+
+$$ std = \sqrt{variance} = \sqrt{58.96} \approx 7.68$$
+
+If we take our example from before about the plant's height, you would have an higher variance and standard error compared to your friend's.
+
+## Code examples
+
+::: {.panel-tabset}
+
+### Python
+
+In Python, there is no built-in functions for computing variance or standard error. So we have to use the `numpy` package.
+
+It provides both `np.var()` and `np.std()` functions.
+
+```{python}
+import numpy as np
+
+heights = [10, 15, 4, 22, 25]
+
+np.var(heights)
+np.std(heights)
+```
+
+
+
+### R
+
+With R, we can just use the `var()` and `sd()` functions.
+
+```{r}
+heights <- c(10, 15, 4, 22, 25)
+
+var(heights)
+sd(heights)
+```
+
+:::
+
+Have you seen that R and Python don't give the same values here? It's weird right? Well, it's not a bug and it's because they are not calculating the exact same thing.
+
+In Python, numpy computes the **population variance** (what we saw before). A contrario, R is calculating the **sample variance**.
+
+The **sample variance** has for only difference that instead of dividing by the total number of values at the end, it divides by the total number **minus one** (`4` instead of `5` in our previous case).
+
+There is perfectly right mathematical reason behind this, and you can learn more about it [here](https://en.wikipedia.org/wiki/Variance). The only thing you have to keep in mind is that the higher the sample size, the more this makes no difference in practice

@@ -6,3 +6,6 @@
 .venv/
 _site/
 sandbox*
+
+*_files/
+*.quarto_ipynb
