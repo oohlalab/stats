@@ -56,7 +56,7 @@ jobs:
 
       - name: Install R dependencies
         run: |
-          Rscript -e 'install.packages(c("tidyverse", "reticulate"))'
+          Rscript -e 'install.packages(c("tidyverse", "reticulate", "leaflet"))'
 
       - name: Install Quarto dependencies
         run: |
