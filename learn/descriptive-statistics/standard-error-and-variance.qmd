@@ -3,6 +3,11 @@ title: Standard error and variance
 description: Everything you need to know to learn about standard error and variance
 ---
 
+```{r}
+#| echo: false
+reticulate::use_virtualenv("../../.venv")
+```
+
 ```{python}
 #| echo: false
 import numpy as np

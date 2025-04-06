@@ -20,6 +20,8 @@ format:
     html-math-method: katex
 
 lightbox: true
+execute:
+  cache: true
 
 website:
   title: "OohLaLab"
