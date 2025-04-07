@@ -119,11 +119,27 @@ If we take our example from before about the plant's height, you would have an <
 
 ## How to interpret
 
-It's impossible to interpret the variance in itself. This is due to the fact that we squared the values, which changes the original unit of them (e.g it does not make much to interpret squared centimeters).
+It's __impossible to interpret__ the variance in itself. This is due to the fact that we squared the values, which changes the original unit of them (e.g it does not make much to interpret squared centimeters).
 
-The main thing we can say about variance is that the higher it is, the more our values tend to be spreaded.
+The main thing we can say about variance is that the higher it is, the more our values tend to be __spreaded__. A contrario, a small variance means that values tend to be pretty close to each other.
 
-For the standard deviation,
+For the standard deviation, it's pretty much the same thing, but it's in the __same unit as the original values__ (e.g centimeters).
+
+In __practice__, it becomes interesting to interpret when we know the law followed by our values. For example, if it's normal law, we can use the following:
+
+- About 68% of values fall within 1 standard deviation of the mean.
+
+- About 95% within 2 standard deviations.
+
+- About 99.7% within 3 standard deviations.
+
+For example, if the mean is `10` and the standard deviation `2`, we can say that:
+
+- About 68% of values fall between `8` and `12`.
+
+- About 95% of values fall between `6` and `14`.
+
+- About 99.7% of values fall between `4` and `16`.
 
 ## Code examples
 
