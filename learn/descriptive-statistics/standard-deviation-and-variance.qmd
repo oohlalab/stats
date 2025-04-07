@@ -39,11 +39,11 @@ height_highvar = np.random.normal(loc=10, scale=3, size=sample_size)
 
 ## Measuring dispersion
 
-Imagine you want to measure the <span style="color: #b20e0e; font-weight: bold;">height of plants in your garden</span> because you've seen that they all have __very different heights__, but you don't know how different they are.
+Imagine you want to measure the <span style="color: #b20e0e; font-weight: bold;">height of plants in your garden</span> because you've noticed that they all have very different heights, but you're not sure how different they actually are.
 
-You want to compare with <span style="color: #133ecd; font-weight: bold;">your friend's plants</span>, which keeps saying that all of those plants are almost the same height.
+You also want to compare them with <span style="color: #133ecd; font-weight: bold;">your friend's plants</span>, who keeps saying that all of their plants are almost the same height.
 
-In order to do that, we want compare their distribution.
+To do that, we need to compare their distributions.
 
 ::: {.panel-tabset}
 
@@ -83,31 +83,31 @@ plt.show()
 :::
 
 
-Those graphs show us that <span style="color: #b20e0e; font-weight: bold;">your plants</span> height can vary between ~2cm to ~18cm, while <span style="color: #133ecd; font-weight: bold;">your friend's plant</span> are mostly between ~8cm to ~12cm.
+Those graphs show us that the height of <span style="color: #b20e0e; font-weight: bold;">your plants</span> can vary from around ~2 cm to ~18 cm, while <span style="color: #133ecd; font-weight: bold;">your friend's plants</span> mostly range from ~8 cm to ~12 cm.
 
-The variance and the standard deviation is just a way to __quantify__ this with an actual value.
+The variance and standard deviation are simply ways to __quantify__ this variation with actual values.
 
 ## How to calculate
 
-Let's assume you have the following measurements for your plants height in cm:
+Suppose you have the following measurements for the height of your plants in cm:
 
 `[10, 15, 4, 22, 25]`
 
-First we need to compute the average:
+First we need to calculate the average:
 
 $$ average = \frac{10 + 15 + 4 + 22 + 25}{5} =  15.2$$
 
-Now that we have the average, we want to compute the __difference between each plant and the average__.
+Now that we have the average, we want to calculate the __difference between each plant and the average__.
 
-So for example the first plant has an height of `10`, so it gives us: `10 - 15.2 = -5.2`
+For example, the first plant has a height of `10`, which gives us: `10 - 15.2 = -5.2`.
 
-We do the same with others, and we now have a new list of values: `[-5.2, -0.2, -11.2, 6.8, 9.8]`
+We do the same with the others, and we now have a new list of values: `[-5.2, -0.2, -11.2, 6.8, 9.8]`.
 
-As you can see, we have both __some negative and positive values__ here. In order to "fix" it, we take each value and **square it**. For example, we have `-5.2*-5.2 = 27.04`, and so on. Our new list looks like this now:
+As you can see, we have both negative and positive __values here. To ‘correct’ the situation, we take each value and raise it to the **square**. For example, we have `-5.2*-5.2 = 27.04`, and so on. Our new list now looks like this:
 
 `[27.04, 0.04, 125.44, 46.24, 96.04]`
 
-The final step to get the variance is to sum up all those values and divide by the number of values (it's basically like calculating an average):
+The final step in obtaining the variance is to add up all these values and divide by the number of values (this is basically like calculating an average):
 
 $$ variance = \frac{27.04 + 0.04 + 125.44 + 46.24 + 96.04}{5} =  58.96 $$
 
@@ -115,31 +115,31 @@ And the standard deviation is just the **square root of the variance**:
 
 $$ std = \sqrt{variance} = \sqrt{58.96} \approx 7.68 $$
 
-If we take our example from before about the plant's height, you would have an <span style="color: #b20e0e; font-weight: bold;">higher variance and standard deviation</span> compared to <span style="color: #133ecd; font-weight: bold;">your friend's</span>.
+If we go back to our earlier example about the plants' heights, you would have a <span style="color: #b20e0e; font-weight: bold;">higher variance and standard deviation</span> compared to <span style="color: #133ecd; font-weight: bold;">your friend's</span>.
 
 ## How to interpret
 
-It's __impossible to interpret__ the variance in itself. This is due to the fact that we squared the values, which changes the original unit of them (e.g it does not make much to interpret squared centimeters).
+It is __impossible to interpret__ the variance itself. This is because we have squared the values, which changes their original unit (for example, it is not very useful to interpret squared centimetres).
 
-The main thing we can say about variance is that the higher it is, the more our values tend to be __spreaded__. A contrario, a small variance means that values tend to be pretty close to each other.
+The main thing we can say about variance is that the higher it is, the more __calibrated__ our values tend to be. Conversely, a low variance means that the values tend to be fairly close together.
 
-For the standard deviation, it's pretty much the same thing, but it's in the __same unit as the original values__ (e.g centimeters).
+The standard deviation is much the same, but it is expressed in the __same unit as the original values__ (for example, centimetres).
 
-In __practice__, it becomes interesting to interpret when we know the law followed by our values. For example, if it's normal law, we can use the following:
+In __practice__, it becomes interesting to interpret when we know the distribution of our values. For example, if it's a normal distribution, we can use the following:
 
-- About 68% of values fall within 1 standard deviation of the mean.
+- Around 68% of values lie within one standard deviation of the mean.
 
-- About 95% within 2 standard deviations.
+- Around 95% of values are within `2` standard deviations.
 
-- About 99.7% within 3 standard deviations.
+- Approximately 99.7% of values are within `3` standard deviations.
 
-For example, if the mean is `10` and the standard deviation `2`, we can say that:
+For example, if the mean is `10` and the standard deviation is `2`, we can say that :
 
-- About 68% of values fall between `8` and `12`.
+- Approximately 68% of values are between 8 and 12.
 
-- About 95% of values fall between `6` and `14`.
+- Around 95% of values are between 6` and 14`.
 
-- About 99.7% of values fall between `4` and `16`.
+- Approximately 99.7% of values are between 4` and 16`.
 
 ## Code examples
 
@@ -147,19 +147,16 @@ For example, if the mean is `10` and the standard deviation `2`, we can say that
 
 ### Python
 
-In Python, there is no built-in functions for computing variance or standard deviation. So we have to use the `numpy` package.
+In Python, there are no built-in functions for calculating variance or standard deviation. We therefore need to use the `numpy` package.
 
-It provides both `np.var()` and `np.std()` functions.
+It provides the functions `np.var()` and `np.std()`.
 
 ```{python}
 import numpy as np
 
 heights = [10, 15, 4, 22, 25]
 
-# Variance
 np.var(heights)
-
-# Standard deviation
 np.std(heights)
 ```
 
@@ -167,7 +164,7 @@ np.std(heights)
 
 ### R
 
-With R, we can just use the `var()` and `sd()` functions.
+With R, we can simply use the `var()` and `sd()` functions.
 
 ```{r}
 heights <- c(10, 15, 4, 22, 25)
@@ -178,10 +175,10 @@ sd(heights)
 
 :::
 
-Have you seen that R and Python don't give the same values here? It's weird right? Well, it's not a bug and it's because they are not calculating the exact same thing.
+Did you notice that R and Python don't give the same values here? Isn't that strange? Well, it's not a bug and it's because they don't calculate exactly the same thing.
 
-In Python, numpy computes the **population variance** (what we saw before). A contrario, R is calculating the **sample variance**.
+In Python, numpy calculates the **variance of the population** (as we saw earlier). In contrast, R calculates the **sample variance**.
 
-The **sample variance** has for only difference that instead of dividing by the total number of values at the end, it divides by the total number **minus one** (`4` instead of `5` in our previous case).
+The only difference between the **sample variance** is that instead of dividing by the total number of values at the end, it divides by the total number **minus one** (`4` instead of `5` in our previous case).
 
-There is perfectly right mathematical reason behind this, and you can learn more about it [here](https://en.wikipedia.org/wiki/Variance#Population_variance_and_sample_variance). The only thing you have to keep in mind is that the higher the sample size, the more this makes no difference in practice
+There's a perfectly good mathematical reason for this, and you can read more about it [here] (https://en.wikipedia.org/wiki/Variance#Population_variance_and_sample_variance). The only thing to bear in mind is that the larger the sample size, the more it makes no difference in practice.
