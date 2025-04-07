@@ -1,6 +1,6 @@
 ---
-title: Standard error and variance
-description: Everything you need to know to learn about standard error and variance
+title: Standard deviation and variance
+description: Everything you need to know to learn about standard deviation and variance
 ---
 
 ```{r}
@@ -16,7 +16,7 @@ import seaborn as sns
 
 def clean_ax(ax):
    ax.set_xlim(2, 18)
-   ax.set_ylim(0, 0.45)
+   #ax.set_ylim(0, 0.45)
    ax.spines[["left", "top", "right"]].set_visible(False)
    ax.set_yticks([])
    ax.set_xlabel("Height (in cm)")
@@ -26,6 +26,7 @@ np.random.seed(1)
 red = "#b20e0e"
 blue = "#133ecd"
 text_params = dict(x=0, y=0.6, alpha=0.7, size=15, weight="bold")
+hist_params = dict(alpha=0.5, bins=15)
 
 sample_size = 200
 height_lowvar = np.random.normal(loc=10, scale=1, size=sample_size)
@@ -38,9 +39,9 @@ height_highvar = np.random.normal(loc=10, scale=3, size=sample_size)
 
 ## Measuring dispersion
 
-Imagine you want to measure the __height of plants in your garden__ because you've seen that they all have __very different heights__, but you don't know how different they are.
+Imagine you want to measure the <span style="color: #b20e0e; font-weight: bold;">height of plants in your garden</span> because you've seen that they all have __very different heights__, but you don't know how different they are.
 
-You want to compare with your friend's plants, which keeps saying that all of those plants are almost the same height.
+You want to compare with <span style="color: #133ecd; font-weight: bold;">your friend's plants</span>, which keeps saying that all of those plants are almost the same height.
 
 In order to do that, we want compare their distribution.
 
@@ -52,7 +53,7 @@ In order to do that, we want compare their distribution.
 #| echo: false
 fig, ax = plt.subplots()
 clean_ax(ax)
-sns.kdeplot(height_highvar, fill=True, color=red, ax=ax)
+ax.hist(height_highvar, color=red, **hist_params)
 ax.text(s="Your plants", color=red, transform=ax.transAxes, **text_params)
 plt.show()
 ```
@@ -63,7 +64,7 @@ plt.show()
 #| echo: false
 fig, ax = plt.subplots()
 clean_ax(ax)
-sns.kdeplot(height_lowvar, fill=True, color=blue, ax=ax)
+ax.hist(height_lowvar, color=blue, **hist_params)
 ax.text(s="Your friend's plants", color=blue, transform=ax.transAxes, **text_params)
 plt.show()
 ```
@@ -74,8 +75,8 @@ plt.show()
 #| echo: false
 fig, ax = plt.subplots()
 clean_ax(ax)
-sns.kdeplot(height_highvar, fill=True, color=red, ax=ax)
-sns.kdeplot(height_lowvar, fill=True, color=blue, ax=ax)
+ax.hist(height_highvar, color=red, **hist_params)
+ax.hist(height_lowvar, color=blue, **hist_params)
 plt.show()
 ```
 
@@ -84,7 +85,7 @@ plt.show()
 
 Those graphs show us that <span style="color: #b20e0e; font-weight: bold;">your plants</span> height can vary between ~2cm to ~18cm, while <span style="color: #133ecd; font-weight: bold;">your friend's plant</span> are mostly between ~8cm to ~12cm.
 
-The variance and the standard error is just a way to __quantify__ this with an actual value.
+The variance and the standard deviation is just a way to __quantify__ this with an actual value.
 
 ## How to calculate
 
@@ -110,11 +111,19 @@ The final step to get the variance is to sum up all those values and divide by t
 
 $$ variance = \frac{27.04 + 0.04 + 125.44 + 46.24 + 96.04}{5} =  58.96 $$
 
-And the standard error is just the **square root of the variance**:
+And the standard deviation is just the **square root of the variance**:
 
-$$ std = \sqrt{variance} = \sqrt{58.96} \approx 7.68$$
+$$ std = \sqrt{variance} = \sqrt{58.96} \approx 7.68 $$
 
-If we take our example from before about the plant's height, you would have an higher variance and standard error compared to your friend's.
+If we take our example from before about the plant's height, you would have an <span style="color: #b20e0e; font-weight: bold;">higher variance and standard deviation</span> compared to <span style="color: #133ecd; font-weight: bold;">your friend's</span>.
+
+## How to interpret
+
+It's impossible to interpret the variance in itself. This is due to the fact that we squared the values, which changes the original unit of them (e.g it does not make much to interpret squared centimeters).
+
+The main thing we can say about variance is that the higher it is, the more our values tend to be spreaded.
+
+For the standard deviation,
 
 ## Code examples
 
@@ -122,7 +131,7 @@ If we take our example from before about the plant's height, you would have an h
 
 ### Python
 
-In Python, there is no built-in functions for computing variance or standard error. So we have to use the `numpy` package.
+In Python, there is no built-in functions for computing variance or standard deviation. So we have to use the `numpy` package.
 
 It provides both `np.var()` and `np.std()` functions.
 
@@ -131,7 +140,10 @@ import numpy as np
 
 heights = [10, 15, 4, 22, 25]
 
+# Variance
 np.var(heights)
+
+# Standard deviation
 np.std(heights)
 ```
 
@@ -156,4 +168,4 @@ In Python, numpy computes the **population variance** (what we saw before). A co
 
 The **sample variance** has for only difference that instead of dividing by the total number of values at the end, it divides by the total number **minus one** (`4` instead of `5` in our previous case).
 
-There is perfectly right mathematical reason behind this, and you can learn more about it [here](https://en.wikipedia.org/wiki/Variance). The only thing you have to keep in mind is that the higher the sample size, the more this makes no difference in practice
+There is perfectly right mathematical reason behind this, and you can learn more about it [here](https://en.wikipedia.org/wiki/Variance#Population_variance_and_sample_variance). The only thing you have to keep in mind is that the higher the sample size, the more this makes no difference in practice

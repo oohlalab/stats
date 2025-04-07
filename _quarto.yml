@@ -20,8 +20,6 @@ format:
     html-math-method: katex
 
 lightbox: true
-execute:
-  cache: true
 
 website:
   title: "OohLaLab"
@@ -45,8 +43,8 @@ website:
           contents:
             - href: learn/descriptive-statistics/average-median-and-mode.qmd
               text: Average, median and mode
-            - href: learn/descriptive-statistics/standard-error-and-variance.qmd
-              text: Standard error and variance
+            - href: learn/descriptive-statistics/standard-deviation-and-variance.qmd
+              text: Standard deviation and variance
         - text: "---"
         - section: "Preparing and exploring data"
           contents:
