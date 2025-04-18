@@ -1,5 +1,0 @@
----
-title: Average, median and mode
-description: "Everything you need to know to learn about average and median"
----
-

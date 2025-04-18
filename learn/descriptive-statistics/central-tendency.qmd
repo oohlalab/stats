@@ -1,0 +1,109 @@
+---
+title: Central tendency
+description: Everything you need to know to learn about central tendency
+date: today
+---
+
+
+# Central tendency
+
+
+
+
+## Let's go OohCrew!
+
+
+- What the fuck is this central tendency?
+
+
+- Central tendency? I thought this site was for **all levels**!!!!
+
+
+- Yeah, don’t worry! Just close your eyes and imagine:
+  You’re with your friends, it’s a sunny Sunday, and you don’t know what to do.
+  You can’t agree on the activity, **BUT** you almost all agree that it should happen outside to enjoy the sunshine.
+
+
+Well, that’s exactly what a central tendency is: finding **a value** that best **represents** the group.
+
+
+## Why do you need a central tendency?
+
+
+- Yes, why? It sounds booooooorrrrinnnngggggg!!!!!!
+  Plus, you’re talking about value, and I don’t like numbers... 🤮
+
+
+- Just because we need a reference!
+Imagine again:
+You’ve just moved house. You need to figure out where to shop for groceries.
+There are two supermarkets the same distance from your place.
+You want to know which one is cheaper.
+You’re not going to compare every single item one by one…
+You need a reference.
+
+
+- OK, if you say so!
+  And... how do you go about it?
+
+
+## The game's 3 bosses
+
+
+### THE MEAN, aka The Diplomat (26W - 2L - 4D)
+
+
+To calculate it, it’s simple: add up all the values and divide by the number of values.
+
+
+Remember back when you used to get your report card in the mail? Like, actual paper in a real envelope?
+Yeah, when you were in middle school.
+
+
+To figure out your average, you'd add the grades from your 10 subjects and divide by 10. Boom, that’s your mean.
+
+
+**Advantage**: Super easy to calculate.
+
+
+**Inconvenient**: Falls into the trap of extremes. (Don’t worry, we’re not talking politics here.)
+Let me give you an example: if good ol’ Charles, who happens to be the top student, has a 20 average, he’ll pull the whole class average up... and suddenly you’re out here looking like a total failure.
+You might end up below the class average, even if you're doing fine, especially if Charles has an identical twin in the class.
+(Don’t worry, we’ll show you what that looks like later.)
+
+
+### THE MEDIAN, aka The Sage (16W - 0L - 3D)
+
+
+Easy: you sort all the values from smallest to largest, and pick the one in the middle.
+That way, there are just as many values below it as above it.
+
+
+**Advantage**: Immune to extreme values.
+Charles can get 20s all day long, it won’t affect you anymore. He’s powerless now. Mwahaha!
+
+
+**Inconvenient**: It doesn’t tell you anything about the rest of the distribution.
+
+
+*Example*:
+A: [1, 2, 3, 4, 1000]
+B: [1, 2, 3, 4, 5]
+In both cases, the median is 3… but the distributions are wildly different.
+
+
+### THE MODE, aka The Popular Kid (26W - 8L - 0D)
+
+
+This one’s the value that shows up the most in a dataset.
+If the dataset were Netflix, the mode would be the most binge-watched series, the one stuck in the Top 10 week after week.
+Not necessarily the deepest, or the best… but definitely the most watched.
+
+
+**Advantage**: It highlights majority trends or preferences. Super useful with categorical data.
+
+
+**Inconvenient**: There can be more than one mode (if multiple values tie), and it doesn’t tell you anything about the overall shape of the data.
+
+
+## Ready to fight the bosses? 😎

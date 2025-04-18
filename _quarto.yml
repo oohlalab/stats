@@ -41,8 +41,8 @@ website:
         - text: "---"
         - section: "Descriptive Statistics"
           contents:
-            - href: learn/descriptive-statistics/average-median-and-mode.qmd
-              text: Average, median and mode
+            - href: learn/descriptive-statistics/central-tendency.qmd
+              text: central-tendency
             - href: learn/descriptive-statistics/standard-error-and-variance.qmd
               text: Standard error and variance
         - text: "---"
