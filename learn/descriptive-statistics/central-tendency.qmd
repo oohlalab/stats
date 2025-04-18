@@ -5,62 +5,71 @@ date: today
 ---
 
 
-# Central tendency
+## What is this central tendency?
 
-
-
-
-## Let's go OohCrew!
-
-
-- What the fuck is this central tendency?
-
-
-- Central tendency? I thought this site was for **all levels**!!!!
-
-
-- Yeah, don’t worry! Just close your eyes and imagine:
-  You’re with your friends, it’s a sunny Sunday, and you don’t know what to do.
-  You can’t agree on the activity, **BUT** you almost all agree that it should happen outside to enjoy the sunshine.
-
+Cease your doing, hush the world around, and drift into the realm of imagination.
+You’re with your friends, it’s a sunny Sunday, and you don’t know what to do.
+You can’t agree on the activity, **BUT** you almost all agree that it should happen outside to enjoy the sunshine.
 
 Well, that’s exactly what a central tendency is: finding **a value** that best **represents** the group.
 
 
 ## Why do you need a central tendency?
 
+Just because we need a reference!
 
-- Yes, why? It sounds booooooorrrrinnnngggggg!!!!!!
-  Plus, you’re talking about value, and I don’t like numbers... 🤮
-
-
-- Just because we need a reference!
 Imagine again:
-You’ve just moved house. You need to figure out where to shop for groceries.
-There are two supermarkets the same distance from your place.
-You want to know which one is cheaper.
-You’re not going to compare every single item one by one…
-You need a reference.
-
-
-- OK, if you say so!
-  And... how do you go about it?
+You’re analyzing your monthly expenses.
+Some days you spend a little, some days a lot — and some days, nothing at all.
+You want to understand what a “typical” day looks like.
+But you can’t just look at random numbers and guess...
+You need a reference, maybe the **mean**, **median**, or **mode** to make sense of it,
+and to anticipate your future expenses.
 
 
 ## The game's 3 bosses
 
 
-### THE MEAN, aka The Diplomat (26W - 2L - 4D)
+### THE MEAN, aka The Diplomat
+
+![MEAN Diplomat](../../img/moyenne_diplomate.png){width=10% fig-align="center"}
+
 
 
 To calculate it, it’s simple: add up all the values and divide by the number of values.
 
+## 📚 Grades by Subject
 
-Remember back when you used to get your report card in the mail? Like, actual paper in a real envelope?
-Yeah, when you were in middle school.
+Here are the student's grades:
+
+- **Math**: 14
+- **History**: 12
+- **Biology**: 16
+- **English**: 13
+- **Physics**: 11
+
+## 🧮 Calculation
+
+We use the average formula:
+
+$$
+\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i
+$$
+
+In this case, $n = 5$ and the grades are:
+$14$ (Math), $12$ (History), $16$ (Biology), $13$ (English), $11$ (Physics)
+
+So:
+
+$$
+\bar{x} = \frac{14 + 12 + 16 + 13 + 11}{5} = \frac{66}{5} = 13.2
+$$
+
+## ✅ Result
+
+The student's average grade across all subjects is **13.2**
 
 
-To figure out your average, you'd add the grades from your 10 subjects and divide by 10. Boom, that’s your mean.
 
 
 **Advantage**: Super easy to calculate.
@@ -72,7 +81,7 @@ You might end up below the class average, even if you're doing fine, especially 
 (Don’t worry, we’ll show you what that looks like later.)
 
 
-### THE MEDIAN, aka The Sage (16W - 0L - 3D)
+### THE MEDIAN, aka The Sage
 
 
 Easy: you sort all the values from smallest to largest, and pick the one in the middle.
@@ -88,11 +97,12 @@ Charles can get 20s all day long, it won’t affect you anymore. He’s powerles
 
 *Example*:
 A: [1, 2, 3, 4, 1000]
+
 B: [1, 2, 3, 4, 5]
 In both cases, the median is 3… but the distributions are wildly different.
 
 
-### THE MODE, aka The Popular Kid (26W - 8L - 0D)
+### THE MODE, aka The Popular Kid
 
 
 This one’s the value that shows up the most in a dataset.
