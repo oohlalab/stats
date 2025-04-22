@@ -1,0 +1,190 @@
+---
+title: Linear regression
+description: The linear regression might be the most widely statistical model used, and yet it can easily be source of confuseness among people trying to understand and use it. In this blog post, we'll cover concrete, math-free examples so that you finally understand the point of a linear regression and how to use it in practice.
+---
+
+```{r}
+#| echo: false
+reticulate::use_virtualenv("../../.venv")
+```
+
+```{python}
+#| echo: false
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import statsmodels.api as sm
+import statsmodels.tools as tools
+from sklearn.linear_model import LinearRegression
+from pyfonts import load_google_font
+
+np.random.seed(42)
+
+font = load_google_font("Roboto", weight=300)
+font_bold = load_google_font("Roboto", weight=700)
+
+hours_studied = np.random.uniform(1, 10, 50)
+exam_scores = 30 + 5 * hours_studied + np.random.normal(0, 8, 50)
+
+height = np.random.uniform(150, 190, 50)
+salary = 1200 + 0.2 * height + np.random.normal(0, 8, 50)
+
+def scatterplot1():
+   fig, ax = plt.subplots()
+   ax.scatter(hours_studied, exam_scores, color="#722a9f", s=100, alpha=0.6)
+   ax.text(x=0.05, y=0.9, alpha=0.7, size=16, font=font_bold, s="Hours vs. Exam Scores", transform=ax.transAxes)
+   ax.spines[["top", "right"]].set_visible(False)
+   ax.set_xlabel("Hours studied (x)", loc="right", size=12, font=font)
+   ax.set_ylabel("Exam score (y)", loc="top", size=12, font=font)
+   return fig, ax
+
+def scatterplot2():
+   fig, ax = plt.subplots()
+   ax.scatter(height, salary, color="#722a9f", s=100, alpha=0.6)
+   ax.text(x=0.05, y=0.9, alpha=0.7, size=16, font=font_bold, s="Height vs. Salary", transform=ax.transAxes)
+   ax.spines[["top", "right"]].set_visible(False)
+   ax.set_xlabel("Height in cm (x)", loc="right", size=12, font=font)
+   ax.set_ylabel("Salary (y)", loc="top", size=12, font=font)
+   return fig, ax
+```
+
+<br>
+
+![](../../img/meme-linear-regression.jpg){width=50% fig-align="center"}
+
+## Time spent studying and exam score
+
+Imagine we have data about students, and we have, for each student, the amount of hours studying for the exam and their final score. This gives us a table like this:
+
+| Hours Studied (X) | Exam Score (Y) |
+|-------------------|----------------|
+| 2                 | 45             |
+| 4                 | 60             |
+| 5                 | 70             |
+| 7                 | 80             |
+| 9                 | 95             |
+
+We can represent such table by drawing a scatter plot: each dot represents one student, the position on the x-axis represent the hours studied and the position on the y axis the exam score.
+
+```{python}
+#| echo: false
+fig, ax = scatterplot1()
+plt.show()
+```
+
+
+The first thing we see here is that in general, the more a student studied the more he had a better score.
+
+## Adding a trend line
+
+In our graph above, we intuitively want to add some sort of trend line, that will highlight that the pattern of the more a student studied the better the score.
+
+Our graph will now look like this:
+
+```{python}
+#| echo: false
+fig, ax = scatterplot1()
+model = LinearRegression().fit(hours_studied.reshape(-1, 1), exam_scores)
+a, b = model.coef_[0], model.intercept_
+x_vals = np.linspace(1, 10, 100)
+ax.plot(x_vals, a * x_vals + b, color="red", lw=2)
+ax.text(x=0.05, y=0.75, alpha=0.7, size=13, font=font_bold, s=f"y = {a:.1f}x + {b:.1f}", transform=ax.transAxes)
+plt.show()
+```
+
+But the question is: how do we know how to get such line? Well, linear regression!
+
+## In practice
+
+When doing a linear regression, we're actually looking for 2 numbers, usually named `a` (slope) and `b` (intercept).
+
+- __Slope (a):__ Tells us how much the exam score changes when studying one more hour (on average).
+- __Intercept (b):__ Tells us the theoretical score of a student who spent 0 hours studying.
+
+In our example:
+
+- __Slope = 4.1__ → Each extra hour of study increases the score by `4.1` points.
+- __Intercept = 31__ → A student who didn’t study at all would score `31`.
+
+But we can also use those 2 numbers for predicting the exam score!
+
+For example, if a student study for 10 hours, our model predicts that he will have a score of:
+
+$4.1 \times 10 + 31= 72$
+
+## Is it significant?
+
+In our previous example, it was relatively obvious that the more a student study, the better its final score. But in real life, we use a much more nuanced approached before diving into the conclusions.
+
+For example, let's look at the relationship between the height and the salary
+
+```{python}
+fig, ax = scatterplot2()
+plt.show()
+```
+
+## Code Examples
+
+First example about time spent studying and exam score.
+
+::: {.panel-tabset}
+
+### Python
+
+In Python, we can use `scikit-learn` or `statsmodels` for linear regression.
+
+```{python}
+x = sm.add_constant(hours_studied)
+y = exam_scores
+model = sm.OLS(y, x)
+results = model.fit()
+print(results.summary())
+```
+
+### R
+
+In R, we use the `lm()` function.
+
+```{r}
+data <- data.frame(
+  hours = c(2, 4, 5, 7, 9),
+  score = c(45, 60, 70, 80, 95)
+)
+
+model <- lm(score ~ hours, data=data)
+summary(model)
+```
+
+:::
+
+Second example about height and salary
+
+::: {.panel-tabset}
+
+### Python
+
+In Python, we can use `scikit-learn` or `statsmodels` for linear regression.
+
+```{python}
+x = sm.add_constant(height.reshape(-1, 1))
+y = salary
+model = sm.OLS(y, x)
+results = model.fit()
+print(results.summary())
+```
+
+### R
+
+In R, we use the `lm()` function.
+
+```{r}
+data <- data.frame(
+  hours = c(2, 4, 5, 7, 9),
+  score = c(45, 60, 70, 80, 95)
+)
+
+model <- lm(score ~ hours, data=data)
+summary(model)
+```
+
+:::

@@ -58,8 +58,8 @@ website:
         - text: "---"
         - section: "Identify relationships between variables"
           contents:
-            - href: learn/identify-relationships-between-variables/index.qmd
-              text: Get started
+            - href: learn/identify-relationships-between-variables/linear-regression.qmd
+              text: Linear Regression
         - text: "---"
         - section: "Group observations or variables"
           contents:
