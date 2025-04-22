@@ -32,26 +32,27 @@ and to anticipate your future expenses.
 
 ### THE MEAN, aka The Diplomat
 
-![MEAN Diplomat](../../img/moyenne_diplomate.png){width=10% fig-align="center"}
+![MEAN Diplomat](../../img/Diplo_mean.png){width=10% fig-align="center"}
 
+The average, much like a diplomat, tries to find common ground between very different positions, summarizing a whole set of data into a single number meant to represent everyone. But in trying to please everyone, it often ends up truly representing no one. It smooths out the extremes to create an illusion of balance, even when reality is far more complex.
 
+To calculate it, it’s simple: add up all the values and divide by the number of values (n).
 
-To calculate it, it’s simple: add up all the values and divide by the number of values.
+### Illustration
 
-## 📚 Grades by Subject
+**Grades by Subject**
 
 Here are the student's grades:
 
-- **Math**: 14
-- **History**: 12
-- **Biology**: 16
-- **English**: 13
-- **Physics**: 11
+- Math: 14
+- History: 12
+- Biology: 16
+- English: 13
+- Physics: 11
 
-## 🧮 Calculation
+**Calculation**
 
 We use the average formula:
-
 $$
 \bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i
 $$
@@ -65,20 +66,27 @@ $$
 \bar{x} = \frac{14 + 12 + 16 + 13 + 11}{5} = \frac{66}{5} = 13.2
 $$
 
-## ✅ Result
+**Result**
 
 The student's average grade across all subjects is **13.2**
-
-
 
 
 **Advantage**: Super easy to calculate.
 
 
-**Inconvenient**: Falls into the trap of extremes. (Don’t worry, we’re not talking politics here.)
-Let me give you an example: if good ol’ Charles, who happens to be the top student, has a 20 average, he’ll pull the whole class average up... and suddenly you’re out here looking like a total failure.
-You might end up below the class average, even if you're doing fine, especially if Charles has an identical twin in the class.
-(Don’t worry, we’ll show you what that looks like later.)
+**Inconvenient**: The average is easily swayed by extremes.
+
+Picture this: you're out at dinner with nine friends. Nine of you order a simple €20 meal.
+But the tenth — who clearly thinks he's Jeff Bezos — casually orders a €500 bottle of wine.
+
+When the bill comes, guess who suggests, with a not-so-innocent smile:
+
+“Let’s just split it evenly, it’s easier that way!”
+
+Suddenly, everyone has to pay €70, even if all you had was the daily special and a glass of water.
+
+In this case, the average doesn’t reflect reality.
+One extravagant outlier is enough to throw everything off — and just like that, you’re footing the bill for Jeff’s wine.
 
 
 ### THE MEDIAN, aka The Sage
