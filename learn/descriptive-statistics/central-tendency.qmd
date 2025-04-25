@@ -20,10 +20,10 @@ Just because we need a reference!
 
 Imagine again:
 You’re analyzing your monthly expenses.
-Some days you spend a little, some days a lot — and some days, nothing at all.
+Some days you spend a little, some days a lot and some days, nothing at all.
 You want to understand what a “typical” day looks like.
 But you can’t just look at random numbers and guess...
-You need a reference, maybe the **mean**, **median**, or **mode** to make sense of it,
+You need a reference to make sense of it,
 and to anticipate your future expenses.
 
 
@@ -32,14 +32,16 @@ and to anticipate your future expenses.
 
 ### THE MEAN, aka The Diplomat
 
-![MEAN Diplomat](../../img/Diplo_mean.png){width=10% fig-align="center"}
+![MEAN Diplomat](../../img/Diplo_mean.png){width=10% fig-align="left"}
 
 The average, much like a diplomat, tries to find common ground between very different positions, summarizing a whole set of data into a single number meant to represent everyone. But in trying to please everyone, it often ends up truly representing no one. It smooths out the extremes to create an illusion of balance, even when reality is far more complex.
 
-To calculate it, it’s simple: add up all the values and divide by the number of values (n).
+To calculate it, it’s simple: add up all the values and divide by the number of values (*n*).
+<br>
 
+::: {.callout-note}
 ### Illustration
-
+<br>
 **Grades by Subject**
 
 Here are the student's grades:
@@ -69,7 +71,7 @@ $$
 **Result**
 
 The student's average grade across all subjects is **13.2**
-
+:::
 
 **Advantage**: Super easy to calculate.
 
@@ -77,7 +79,7 @@ The student's average grade across all subjects is **13.2**
 **Inconvenient**: The average is easily swayed by extremes.
 
 Picture this: you're out at dinner with nine friends. Nine of you order a simple €20 meal.
-But the tenth — who clearly thinks he's Jeff Bezos — casually orders a €500 bottle of wine.
+But the tenth (who clearly thinks he's Jeff Bezos) casually orders a €500 bottle of wine.
 
 When the bill comes, guess who suggests, with a not-so-innocent smile:
 
@@ -86,10 +88,14 @@ When the bill comes, guess who suggests, with a not-so-innocent smile:
 Suddenly, everyone has to pay €70, even if all you had was the daily special and a glass of water.
 
 In this case, the average doesn’t reflect reality.
-One extravagant outlier is enough to throw everything off — and just like that, you’re footing the bill for Jeff’s wine.
+One extravagant outlier is enough to throw everything off, and just like that, you’re footing the bill for Jeff’s wine.
 
+<br>
+<br>
 
 ### THE MEDIAN, aka The Sage
+
+![MEDIAN Sage ](../../img/Sage_mean.png){width=10% fig-align="left"}
 
 
 Easy: you sort all the values from smallest to largest, and pick the one in the middle.

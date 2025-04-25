@@ -42,7 +42,7 @@ website:
         - section: "Descriptive Statistics"
           contents:
             - href: learn/descriptive-statistics/central-tendency.qmd
-              text: central-tendency
+              text: Central-tendency
             - href: learn/descriptive-statistics/standard-error-and-variance.qmd
               text: Standard error and variance
         - text: "---"
