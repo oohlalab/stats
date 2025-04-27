@@ -97,37 +97,218 @@ One extravagant outlier is enough to throw everything off, and just like that, y
 
 ![MEDIAN Sage ](../../img/Sage_mean.png){width=10% fig-align="left"}
 
+The median, like a true sage, seeks not to negotiate between all voices, but to quietly find the calm center.
+It doesn't care about the noisy extremes it simply stands exactly in the middle, indifferent to the chaos around it.
+Where the mean tries to please everyone, the median just listens to the crowd, sorts them in order, and picks the one right at the heart.
+In a world full of wild fluctuations, the median offers a simple, steady answer:
+“Here is the center. Deal with it.”
 
-Easy: you sort all the values from smallest to largest, and pick the one in the middle.
+To calculate, it's easy: you sort all the values from smallest to largest, and pick the one in the middle.
 That way, there are just as many values below it as above it.
 
 
-**Advantage**: Immune to extreme values.
-Charles can get 20s all day long, it won’t affect you anymore. He’s powerless now. Mwahaha!
+::: {.callout-note}
+#### Illustration
+<br> **Grades by Subject**
+Here are the student's grades:
+
+- Math: 14
+- History: 12
+- Biology: 16
+- English: 13
+- Physics: 11
+
+**Calculation**
+
+First, sort the grades in ascending order:
+
+$$
+11\quad 12\quad 13\quad 14\quad 16
+$$
+
+Since there are 5 values (an odd number), the median is simply the middle value, which is 13.
+
+<br>
+If the student also had a grade in Chemistry:
+
+Chemistry: 15
+
+Then the grades would be:
+
+$$
+11\quad 12\quad 13\quad 14\quad 15\quad 16
+$$
+
+Since there are now 6 values (an even number), the median is calculated by taking the average of the two middle values:
+
+So:
+Median calcul
+
+$$
+\text{Median} = \frac{13 + 14}{2} = \frac{27}{2} = 13.5
+$$
+
+**Result**
+
+With 5 subjects, the student's median grade is 13.
+
+With 6 subjects, the student's median grade is 13.5.
+
+:::
 
 
-**Inconvenient**: It doesn’t tell you anything about the rest of the distribution.
 
 
-*Example*:
-A: [1, 2, 3, 4, 1000]
+**Advantage**: The median is not affected by extreme values — it gives a better idea of the "typical" case.
 
-B: [1, 2, 3, 4, 5]
+**Inconvenient**: It ignores how far apart the data points are — you lose some information about the distribution.
+
+*Example*:<br>
+A: [1, 2, 3, 4, 1000]<br>
+
+B: [1, 2, 3, 4, 5]<br><br>
 In both cases, the median is 3… but the distributions are wildly different.
+
+<br><br>
 
 
 ### THE MODE, aka The Popular Kid
+![MEDIAN Sage ](../../img/popular_mode.png){width=10% fig-align="left"}
+
+The mode is the one that shows up the most.
+If data were a party, the mode would be the person everyone knows — not necessarily the smartest or the richest, but the most recognized.
+
+It captures the most frequent value in a dataset, revealing what’s most common.
+
+In short:
+Mean = balance
+Median = center
+Mode = popularity contest winner
+
+<br>
+To calculate the mode, you simply look for the value that appears most often.
+
+If there’s a tie (several values occur equally often), your dataset is multimodal.
+If every value is unique, technically there’s no mode.
+
+::: {.callout-note}
+## Illustration
+
+<br> **Grades by Subject**
+Here are the student's grades:
+
+- Math: 14
+- History: 12
+- Biology: 16
+- English: 13
+- Physics: 11
+- Art: 14
+
+**Calculation**
+
+First, list the grades:
 
 
-This one’s the value that shows up the most in a dataset.
-If the dataset were Netflix, the mode would be the most binge-watched series, the one stuck in the Top 10 week after week.
-Not necessarily the deepest, or the best… but definitely the most watched.
+$$
+11\quad 12\quad 13\quad 14\quad 14\quad 16
+$$
+
+The number 14 appears twice, more than any other grade.
+
+**Result**
+
+The student's most common grade "the mode" is 14.
+
+:::
+
+**Advantage**:
+
+Very simple to understand.
+
+Perfect for categorical data (like favorite color, t-shirt size, etc.).
+
+Highlights the most popular or frequent value.
+
+**Inconvenient**:
+
+Sometimes there’s no mode (if all values are unique).
+
+Or there can be multiple modes (which can make things messy).
+
+The mode doesn't tell you anything about the data’s spread or the values between.
+
+Example:<br> You survey people’s favorite ice cream flavors, and the most common answer is "chocolate."
+But it doesn’t tell you how many love vanilla, strawberry, or mango, it just points to the most frequent choice.
 
 
-**Advantage**: It highlights majority trends or preferences. Super useful with categorical data.
 
 
-**Inconvenient**: There can be more than one mode (if multiple values tie), and it doesn’t tell you anything about the overall shape of the data.
+## How to calculate central tendency in Python and R?
+So far, you know the theory.
+Now, let's dive into the real deal: how to actually calculate the mean, median, and mode with code.
+
+We’ll keep it light and simple — just enough for you to copy-paste and run it, whether you’re a Python or R fan.
+
+## How to calculate central tendency in Python and R?
+
+So far, you know the theory.
+Now, let's dive into the real deal: **how to actually calculate the mean, median, and mode with code**.
+
+We’ll keep it light and simple — just enough for you to **copy-paste and run it**, whether you’re a **Python** or **R** fan.
+
+<br>
+
+### Calculate the Mean
+
+```{.python .r}
+#| echo: true
+#| tools:
+#|   - name: "python"
+#|     label: "Python"
+#|   - name: "r"
+#|     label: "R"
+#| language-selector: true
+
+# Python
+grades = [14, 12, 16, 13, 11]
+mean = sum(grades) / len(grades)
+print("The mean is:", mean)
+
+# R
+grades <- c(14, 12, 16, 13, 11)
+mean_value <- mean(grades)
+print(paste("The mean is:", mean_value))
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Ready to fight the bosses? 😎
