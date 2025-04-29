@@ -32,7 +32,7 @@ and to anticipate your future expenses.
 
 ### THE MEAN, aka The Diplomat
 
-![MEAN Diplomat](../../img/Diplo_mean.png){width=10% fig-align="left"}
+![](../../img/Diplo_mean.png){width=10% fig-align="left"}
 
 The average, much like a diplomat, tries to find common ground between very different positions, summarizing a whole set of data into a single number meant to represent everyone. But in trying to please everyone, it often ends up truly representing no one. It smooths out the extremes to create an illusion of balance, even when reality is far more complex.
 
@@ -95,7 +95,7 @@ One extravagant outlier is enough to throw everything off, and just like that, y
 
 ### THE MEDIAN, aka The Sage
 
-![MEDIAN Sage ](../../img/Sage_mean.png){width=10% fig-align="left"}
+![](../../img/Sage_mean.png){width=10% fig-align="left"}
 
 The median, like a true sage, seeks not to negotiate between all voices, but to quietly find the calm center.
 It doesn't care about the noisy extremes it simply stands exactly in the middle, indifferent to the chaos around it.
@@ -173,7 +173,7 @@ In both cases, the median is 3… but the distributions are wildly different.
 
 
 ### THE MODE, aka The Popular Kid
-![MEDIAN Sage ](../../img/popular_mode.png){width=10% fig-align="left"}
+![](../../img/popular_mode.png){width=10% fig-align="left"}
 
 The mode is the one that shows up the most.
 If data were a party, the mode would be the person everyone knows — not necessarily the smartest or the richest, but the most recognized.
@@ -191,8 +191,8 @@ To calculate the mode, you simply look for the value that appears most often.
 If there’s a tie (several values occur equally often), your dataset is multimodal.
 If every value is unique, technically there’s no mode.
 
-::: {.callout-note}
-## Illustration
+::: {.callout-tip}
+### Illustration
 
 <br> **Grades by Subject**
 Here are the student's grades:
@@ -241,14 +241,6 @@ Example:<br> You survey people’s favorite ice cream flavors, and the most comm
 But it doesn’t tell you how many love vanilla, strawberry, or mango, it just points to the most frequent choice.
 
 
-
-
-## How to calculate central tendency in Python and R?
-So far, you know the theory.
-Now, let's dive into the real deal: how to actually calculate the mean, median, and mode with code.
-
-We’ll keep it light and simple — just enough for you to copy-paste and run it, whether you’re a Python or R fan.
-
 ## How to calculate central tendency in Python and R?
 
 So far, you know the theory.
@@ -260,55 +252,26 @@ We’ll keep it light and simple — just enough for you to **copy-paste and run
 
 ### Calculate the Mean
 
-```{.python .r}
-#| echo: true
-#| tools:
-#|   - name: "python"
-#|     label: "Python"
-#|   - name: "r"
-#|     label: "R"
-#| language-selector: true
+::: {.panel-tabset group="language"}
 
-# Python
-grades = [14, 12, 16, 13, 11]
-mean = sum(grades) / len(grades)
-print("The mean is:", mean)
 
-# R
+## R
+
+```{r}
 grades <- c(14, 12, 16, 13, 11)
 mean_value <- mean(grades)
 print(paste("The mean is:", mean_value))
-
 ```
 
 
 
+## Python
+
+```{python}
+grades = [14, 12, 16, 13, 11]
+mean = sum(grades) / len(grades)
+print("The mean is:", mean)
+```
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Ready to fight the bosses? 😎
+:::
