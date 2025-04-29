@@ -39,7 +39,7 @@ The average, much like a diplomat, tries to find common ground between very diff
 To calculate it, it’s simple: add up all the values and divide by the number of values (*n*).
 <br>
 
-::: {.callout-note}
+::: {.callout-tip}
 ### Illustration
 <br>
 **Grades by Subject**
@@ -107,7 +107,7 @@ To calculate, it's easy: you sort all the values from smallest to largest, and p
 That way, there are just as many values below it as above it.
 
 
-::: {.callout-note}
+::: {.callout-tip}
 #### Illustration
 <br> **Grades by Subject**
 Here are the student's grades:
