@@ -1,0 +1,379 @@
+---
+title: Central tendency
+description: Everything you need to know to learn about central tendency
+date: today
+---
+
+
+## What is this central tendency?
+
+Cease your doing, hush the world around, and drift into the realm of imagination.
+You’re with your friends, it’s a sunny Sunday, and you don’t know what to do.
+You can’t agree on the activity, **BUT** you almost all agree that it should happen outside to enjoy the sunshine.
+
+Well, that’s exactly what a central tendency is: finding **a value** that best **represents** the group.
+
+
+## Why do you need a central tendency?
+
+Just because we often need a reference!
+
+Imagine again:<br>
+You're a data analyst working for a retail company. You’ve collected the weekly sales numbers from 50 stores. Some stores sold a lot, others much less, but your team **needs to understand the typical weekly performance**.
+
+You calculate the central tendency of the sales data to find a central value that **summarizes the dataset**. That’s what central tendency is: identifying a single value that best represents the overall distribution of your data, helping stakeholders make informed decisions.
+
+
+## The three bosses in the game of central tendency
+
+
+### THE MEAN, aka The Diplomat
+
+![](../../img/Diplo_mean.png){width=10% fig-align="left"}
+
+The mean, much like a diplomat, tries to find common ground between very different positions, summarizing a whole set of data into a single number meant to represent everyone. But in trying to please everyone, it often ends up truly representing no one. It smooths out the extremes to create an illusion of balance, even when reality is far more complex.
+
+To calculate it, it’s simple: add up all the values and divide by the number of values (*n*).
+<br>
+
+::: {.callout-tip}
+### Illustration
+<br>
+**Grades by Subject**
+
+Here are the student's grades:
+
+- Math: 14
+- History: 12
+- Biology: 16
+- English: 13
+- Physics: 11
+
+**Calculation**
+
+We use the average formula:
+$$
+\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i
+$$
+
+In this case, $n = 5$ and the grades are:
+$14$ (Math), $12$ (History), $16$ (Biology), $13$ (English), $11$ (Physics)
+
+So:
+
+$$
+\bar{x} = \frac{14 + 12 + 16 + 13 + 11}{5} = \frac{66}{5} = 13.2
+$$
+
+**Result**
+
+The student's average grade across all subjects is **13.2**
+:::
+
+**Advantage**:<br> Super easy to calculate.
+
+
+**Inconvenient**:<br> The average is easily swayed by extremes.
+
+Picture this: you're out at dinner with nine friends. Nine of you order a simple €20 meal.
+But the tenth (who clearly thinks he's Jeff Bezos) casually orders a €500 bottle of wine.
+
+When the bill comes, guess who suggests, with a not-so-innocent smile:
+
+“Let’s just split it evenly, it’s easier that way!”
+
+Suddenly, everyone has to pay €70, even if all you had was the daily special and a glass of water.
+
+In this case, the average doesn’t reflect reality.
+One extravagant outlier is enough to throw everything off, and just like that, you’re footing the bill for Jeff’s wine.
+
+<br>
+<br>
+
+### THE MEDIAN, aka The Sage
+
+![](../../img/Sage_mean.png){width=10% fig-align="left"}
+
+The median, like a true sage, seeks not to negotiate between all voices, but to quietly find the calm center.
+It doesn't care about the noisy extremes it simply stands exactly in the middle, indifferent to the chaos around it.
+Where the mean tries to please everyone, the median just listens to the crowd, sorts them in order, and picks the one right at the heart.
+In a world full of wild fluctuations, the median offers a simple, steady answer:
+“Here is the center. Deal with it.”
+
+To calculate, it's easy: you sort all the values from smallest to largest, and pick the one in the middle.
+That way, there are just as many values below it as above it.
+
+
+::: {.callout-tip}
+#### Illustration
+<br> **Grades by Subject**
+Here are the student's grades:
+
+- Math: 14
+- History: 12
+- Biology: 16
+- English: 13
+- Physics: 11
+
+**Calculation**
+
+First, sort the grades in ascending order:
+
+$$
+11\quad 12\quad 13\quad 14\quad 16
+$$
+
+Since there are 5 values (**an odd number**), the median is simply the middle value, which is **13**.
+
+<br>
+If the student also had a grade in Chemistry:
+
+Chemistry: 15
+
+Then the grades would be:
+
+$$
+11\quad 12\quad 13\quad 14\quad 15\quad 16
+$$
+
+Since there are now 6 values (**an even number**), the median is calculated by taking the average of the two middle values:
+
+So:
+Median calcul
+
+$$
+\text{Median} = \frac{13 + 14}{2} = \frac{27}{2} = 13.5
+$$
+
+**Result**
+
+With 5 subjects, the student's median grade is **13**.
+
+With 6 subjects, the student's median grade is **13.5**.
+
+:::
+
+
+
+
+**Advantage**:<br> The median is not affected by extreme values, it gives a better idea of the "typical" case.
+
+**Inconvenient**:<br> It ignores how far apart the data points are, you lose some information about the distribution.
+
+*Example*:<br>
+A: [1, 2, 3, 4, 1000]<br>
+
+B: [1, 2, 3, 4, 5]<br><br>
+In both cases, the median is 3… but the sum, the distributions are wildly different.
+
+<br><br>
+
+
+### THE MODE, aka The Popular Kid
+![](../../img/popular_mode.png){width=10% fig-align="left"}
+
+The mode is the one that shows up the most.
+If data were a party, the mode would be the person everyone knows, not necessarily the smartest or the richest, but the most recognized.
+
+It captures the most frequent value in a dataset, revealing what’s most common.
+
+In short:
+Mean = balance
+Median = center
+Mode = popularity contest winner
+
+<br>
+To calculate the mode, you simply look for the value that appears most often.
+
+If there’s a tie (several values occur equally often), your dataset is multimodal.
+If every value is unique, technically there’s no mode.
+
+::: {.callout-tip}
+### Illustration
+
+<br> **Grades by Subject**
+Here are the student's grades:
+
+- Math: 14
+- History: 12
+- Biology: 16
+- English: 13
+- Physics: 11
+- Art: 14
+
+**Calculation**
+
+First, list the grades:
+
+
+$$
+11\quad 12\quad 13\quad 14\quad 14\quad 16
+$$
+
+The number 14 appears twice, more than any other grade.
+
+**Result**
+
+The student's most common grade "the mode" is **14**.
+
+:::
+
+**Advantage**:
+
+Very simple to understand.
+
+Perfect for categorical data (like favorite color, t-shirt size, etc.).
+
+Highlights the most popular or frequent value.
+
+**Inconvenient**:
+
+Sometimes there’s no mode (if all values are unique).
+
+Or there can be multiple modes (which can make things messy).
+
+The mode doesn't tell you anything about the data’s spread or the values between.
+
+Example:<br> You survey people’s favorite ice cream flavors, and the most common answer is "chocolate."
+But it doesn’t tell you how many love vanilla, strawberry, or mango, it just points to the most frequent choice.
+
+
+## How to calculate central tendency in Python and R and (Excel🤮) ?
+
+So far, you know the theory.
+Now, let's dive into the real deal: **how to actually calculate the mean, median, and mode with code**.
+
+We’ll keep it light and simple — just enough for you to **copy-paste and run it**, whether you’re a **Python** or **R** fan.
+
+<br>
+
+### Calculate the Mean
+
+::: {.panel-tabset group="language"}
+
+
+## R
+
+```{r}
+grades <- c(14, 12, 16, 13, 11)        # Create a vector named 'grades' containing 5 values (grades), or replace with your own data
+mean_value <- mean(grades)            # Calculate the mean of the grades and assign it to 'mean_value'
+print(paste("The mean is:", mean_value))  # Print the message "The mean is:" followed by the mean value
+```
+
+
+
+## Python
+
+```{python}
+grades = [14, 12, 16, 13, 11]              # Create a list named 'grades' containing 5 values, or replace with your own data
+mean = sum(grades) / len(grades)           # Calculate the mean by dividing the sum of grades by the number of grades
+print("The mean is:", mean)                # Print the message "The mean is:" followed by the mean value
+```
+
+## Excel 🤮
+
+Here's how to calculate the average of grades using Excel:
+
+| A (Grades) | Comment                                   |
+|------------|--------------------------------------------|
+| 14         | Grade 1                                    |
+| 12         | Grade 2                                    |
+| 16         | Grade 3                                    |
+| 13         | Grade 4                                    |
+| 11         | Grade 5                                    |
+| =AVERAGE(A1:A5) | Formula to calculate the average of the grades |
+
+- Cells A1 to A5 contain the grade values.
+- In cell A6, use the formula `=AVERAGE(A1:A5)` to compute the mean.
+
+:::
+
+
+<br>
+
+### Calculate the Median
+
+::: {.panel-tabset group="language"}
+
+## R
+
+```{r}
+grades <- c(14, 12, 16, 13, 11)             # Create a vector named 'grades' containing 5 values (grades), or replace with your own data
+median_value <- median(grades)             # Calculate the median of the grades and assign it to 'median_value'
+print(paste("The median is:", median_value))  # Print the message "The median is:" followed by the median value
+```
+
+## Python
+
+```{python}
+import statistics                             # Import the statistics module to use the median function
+
+grades = [14, 12, 16, 13, 11]                 # Create a list named 'grades' containing 5 values, or replace with your own data
+median = statistics.median(grades)           # Calculate the median of the grades using the median function
+print("The median is:", median)              # Print the message "The median is:" followed by the median value
+
+```
+
+## Excel 🤮
+
+Here’s how to calculate the median of grades using Excel :
+
+| A (Grades) | Comment                                   |
+|------------|--------------------------------------------|
+| 14         | Grade 1                                    |
+| 12         | Grade 2                                    |
+| 16         | Grade 3                                    |
+| 13         | Grade 4                                    |
+| 11         | Grade 5                                    |
+| =MEDIAN(A1:A5) | Formula to calculate the median of the grades |
+
+- Cells A1 to A5 contain the grade values.
+- In cell A6, use the formula `=MEDIAN(A1:A5)` to compute the median.
+:::
+
+<br>
+
+### Calculate the Mode
+
+::: {.panel-tabset group="language"}
+
+## R
+
+```{r}
+grades <- c(14, 12, 16, 13, 11, 14)                   # Create a vector named 'grades' containing 5 values (grades), or replace with your own data
+mode_value <- as.numeric(names(sort(table(grades), decreasing = TRUE)[1])) # Create a frequency table with 'table()', sort it in decreasing order to find the most frequent value, extract its name (which is a character), and convert it to numeric to get the mode
+print(paste("The mode is:", mode_value))          # Print the message "The mode is:" followed by the mode value
+
+```
+
+## Python
+
+```{python}
+import statistics                             # Import the statistics module to use the median function
+
+grades = [14, 12, 16, 13, 11, 14]                      # Create a list named 'grades' containing 5 values, or replace with your own data
+mode = statistics.mode(grades)                    # Use the mode() function to find the most frequent value in the list; it returns the value that appears most often
+print("The mode is:", mode)                        # Print the message "The mode is:" followed by the mode value
+
+```
+🟡 Note: In Python 3.8+, statistics.mode() will raise a StatisticsError if no value occurs more than once (i.e., if there's no mode).
+
+## Excel 🤮
+
+Here’s how to calculate the mode of grades using Excel:
+
+| A (Grades) | Comment                                   |
+|------------|--------------------------------------------|
+| 14         | Grade 1                                    |
+| 12         | Grade 2                                    |
+| 16         | Grade 3                                    |
+| 13         | Grade 4                                    |
+| 11         | Grade 5                                    |
+| 14         | Grade 6                                    |
+| =MODE(A1:A5) | Formula to calculate the mode of the grades |
+
+- Cells A1 to A5 contain the grade values.
+- In cell A6, use `=MODE(A1:A6)` to get the mode.
+
+⚠️ Note: If all values occur only once, the mode function will return an error (#N/A), since there's no most frequent value.
+:::
